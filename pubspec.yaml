@@ -1,0 +1,61 @@
+name: doctor
+description: A new Flutter project.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.18.5 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  flare_splash_screen: ^4.0.0
+  card_swiper: ^1.0.4
+  http: ^0.13.4
+  flutter_bloc: ^8.1.1
+  lottie: ^2.0.0
+  smooth_page_indicator: ^1.0.0+2
+  equatable: ^2.0.5
+  circle_nav_bar: ^2.0.1+1
+  iconly: ^1.0.1
+  expandable_text: ^2.3.0
+  pinput: ^2.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  build_runner:
+  flutter_gen_runner:
+
+flutter_gen:
+  integrations:
+    flutter_svg: true
+    lottie: true
+  colors:
+    inputs:
+      - assets/colors/colors.xml
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/lottie/
+
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat-Regular.ttf
+    - family: NunitoSans
+      fonts:
+        - asset: fonts/NunitoSans-Regular.ttf
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto-Medium.ttf
