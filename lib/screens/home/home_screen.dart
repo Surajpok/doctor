@@ -1,90 +1,69 @@
-import 'package:doctor/components/icon_button.dart';
-import 'package:doctor/constants/font_icons.dart';
-import 'package:doctor/constants/index.dart';
-import 'package:doctor/gen/assets.gen.dart';
-import 'package:doctor/gen/colors.gen.dart';
-import 'package:flutter/material.dart';
+import 'package:doctor/components/category_section.dart';
+import 'package:doctor/imports.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ScreenSize.init(context);
     return Scaffold(
-      body: SafeArea(
-        child: SizedBox(
-          height: 400,
-          width: double.maxFinite,
-          child: Container(
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  Assets.images.model.path,
-                ),
-                fit: BoxFit.cover,
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverPadding(
+            padding: const EdgeInsets.all(0),
+            sliver: SliverList(
+              delegate: SliverChildBuilderDelegate(
+                ((context, index) => _buildBody(context)),
+                childCount: 1,
               ),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                SizedBox(
-                  height: 300,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            "Welcome!\nAafira",
-                            style: TextStyle(
-                              fontSize: FontSizes.headline1,
-                              fontWeight: FontWeight.w700,
-                              height: LineHeight.large,
-                            ),
-                          ),
-                          FittedBox(),
-                          Text(
-                            "Have a nice day ☺️",
-                            style: TextStyle(
-                              fontSize: FontSizes.normal,
-                              fontWeight: FontWeight.normal,
-                              height: LineHeight.superLarge,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          MyIconButton(
-                            onTap: () {},
-                            height: 55,
-                            width: 140,
-                            child1: const Text(
-                              'Urgent Care',
-                              style: TextStyle(
-                                fontSize: FontSizes.normal,
-                                color: ColorName.white,
-                              ),
-                            ),
-                            child: const Icon(
-                              MyIcons.heroButtonIcon,
-                              color: ColorName.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
           ),
-        ),
+        ],
       ),
     );
   }
+}
+
+Widget _buildBody(BuildContext context) {
+  return SizedBox(
+    height: ScreenSize.screenHeight * 1.5,
+    child: Stack(
+      children: <Widget>[
+        const HeroSection(),
+        Positioned(
+          top: 430,
+          child: Container(
+            width: ScreenSize.screenWidth,
+            height: ScreenSize.screenHeight * 0.9,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(RadiusSize.containerRadius),
+                topRight: Radius.circular(RadiusSize.containerRadius),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  top: Paddings.content, left: Paddings.normal),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    'Ecare Services',
+                    style: TextStyle(
+                      fontSize: FontSizes.headline2,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  CategorySection(),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 }

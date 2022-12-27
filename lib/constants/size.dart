@@ -10,26 +10,27 @@ class Paddings {
 
   static const double minimum = 10.0;
   static const double normal = 20.0;
-  static const double content = 30.0;
+  static const double content = 40.0;
 }
 
 class IconSizes {
   IconSizes._();
-  static const double topIcon = 30.0;
+  static const double catagoryIcon = 60.0;
   static const double avatar = 50.0;
-  static const double categoryItem = 35.0;
+
   static const double appBarItem = 30.0;
   static const double smallIcon = 20.0;
-
-  static const double successImage = 300.0;
-  static const double deliverImage = 80.0;
 }
 
-// class ContainerSizes {
-//   ContainerSizes._();
+class ContainerSizes {
+  ContainerSizes._();
 
-//   static const double kAttachmentHeight = 24.0;
-// }
+  // homepage Hero
+  static const double heroHeight = 0.5;
+  static const double heroTextColumnHeight = 300;
+  static const double categoryItemRowHeight = 200;
+  static const double iconBoxHeightWidth = 100;
+}
 
 class FontSizes {
   FontSizes._();
@@ -46,45 +47,20 @@ class FontSizes {
 class RadiusSize {
   RadiusSize._();
 
-  static const double containerRadius = 30.0;
+  static const double containerRadius = 50.0;
+
+  static const double catagoryItemRadius = 100.0;
 
   static const buttonRadius = 20.0;
   static const roundButtonRadius = 50.0;
-
-  static const bottomMenuBorderRadius = 30.0;
-
-  static const categoryBorderRadius = 50.0;
-
-  static const cardBorderRadius = 50.0;
-
-  static const counterBorderRadius = 100.0;
-
-  static const singleProductBorderRadius = 20.0;
 }
 
 class UiSize {
   UiSize._();
 
   static const double sizedBoxWidth = 30;
-  static const double sizedBoxHeight = 0.05;
-
-  static const double sizedBoxPaddingHeight = 0.03;
-  static const double sizedBoxSmallPaddingHeight = 0.02;
-
-  static const double categoryBoxHeight = 0.17;
-  static const double categoryBoxWidth = 0.23;
-  static const double categoryBoxInnerWidth = 0.20;
-
-  static const double productCardHeight = 0.23;
-  static const double productCardWidth = 0.23;
-
-  static const double singleProductCardHeight = 0.25;
-  static const double singleProductCardWidth = 0.70;
-
-  static const double productImageWidth = 0.45;
-  static const double productIconWidth = 0.04;
-
-  static const double bottomNavHeight = 80;
+  // hero section
+  static const double heroTextButtonGap = 60;
 }
 
 class LineHeight {

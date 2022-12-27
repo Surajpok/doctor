@@ -1,6 +1,4 @@
-import 'package:doctor/constants/index.dart';
-import 'package:doctor/gen/colors.gen.dart';
-import 'package:flutter/material.dart';
+import 'package:doctor/imports.dart';
 
 class MyIconButton extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;
@@ -22,17 +20,15 @@ class MyIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderRadius = this.borderRadius ?? BorderRadius.circular(0);
+    // final borderRadius = this.borderRadius ?? BorderRadius.circular(0);
     return Material(
       color: Colors.transparent,
       borderRadius: BorderRadius.circular(RadiusSize.roundButtonRadius),
       elevation: 0.4,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Ink(
-        padding: EdgeInsets.only(
-          left: Margins.minimum,
-          right: Margins.minimum,
-        ),
+        padding: const EdgeInsets.only(
+            left: Margins.minimum, right: Margins.minimum),
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
