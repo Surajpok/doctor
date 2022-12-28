@@ -61,9 +61,9 @@ class CategorySection extends StatelessWidget {
                       // categoryList[index]['name'],
                       Category.categories[index].name,
                       style: const TextStyle(
-                        color: Colors.black,
+                        color: ColorName.black,
                         fontSize: FontSizes.normal,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                       ),
                       overflow: TextOverflow.ellipsis,
                     ),

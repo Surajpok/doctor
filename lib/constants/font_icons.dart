@@ -13,6 +13,10 @@ class MyIcons {
   static const cart = IconlyLight.buy;
   static const back = IconlyLight.arrow_left;
 
+  // appointment icon
+  static const calander = IconlyLight.calendar;
+  static const clock = IconlyLight.time_circle;
+
 //drawer icons
   static const profile = IconlyLight.profile;
   static const payment = IconlyLight.bag;
@@ -24,5 +28,4 @@ class MyIcons {
   static const add = Icons.add;
   static const star = Icons.star;
   static const fire = Icons.whatshot;
-  static const clock = Icons.alarm;
 }

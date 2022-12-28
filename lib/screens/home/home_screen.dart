@@ -57,7 +57,7 @@ Widget _buildBody(BuildContext context) {
                     'Ecare Services',
                     style: TextStyle(
                       fontSize: FontSizes.headline2,
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   CategorySection(),
@@ -68,7 +68,7 @@ Widget _buildBody(BuildContext context) {
                     'My Appointments',
                     style: TextStyle(
                       fontSize: FontSizes.headline2,
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   SizedBox(

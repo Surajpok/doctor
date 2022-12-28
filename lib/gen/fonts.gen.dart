@@ -12,10 +12,4 @@ class FontFamily {
 
   /// Font family: Montserrat
   static const String montserrat = 'Montserrat';
-
-  /// Font family: NunitoSans
-  static const String nunitoSans = 'NunitoSans';
-
-  /// Font family: Roboto
-  static const String roboto = 'Roboto';
 }

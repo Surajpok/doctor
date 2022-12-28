@@ -1,24 +1,19 @@
-import 'package:doctor/constants/index.dart';
-import 'package:doctor/gen/colors.gen.dart';
-import 'package:flutter/material.dart';
+import 'package:doctor/imports.dart';
 
-class MyElevatedButton extends StatelessWidget {
+class MyTextButton extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;
   final double? width;
   final double? height;
-  final Gradient gradient;
   final VoidCallback? onPressed;
   final Widget child;
 
-  const MyElevatedButton({
+  const MyTextButton({
     Key? key,
     required this.onPressed,
     required this.child,
     this.borderRadius,
     this.width,
     this.height,
-    this.gradient = const LinearGradient(
-        colors: [ColorName.gradientFirst, ColorName.gradientSecond]),
   }) : super(key: key);
 
   @override
@@ -27,8 +22,11 @@ class MyElevatedButton extends StatelessWidget {
     return Container(
       width: width,
       decoration: BoxDecoration(
-        gradient: gradient,
         borderRadius: borderRadius,
+        border: Border.all(
+          width: 1,
+          color: ColorName.secondaryAccent,
+        ),
       ),
       child: SizedBox(
         height: height,
@@ -37,7 +35,7 @@ class MyElevatedButton extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
-            foregroundColor: ColorName.white,
+            foregroundColor: ColorName.primaryColor,
             shape: RoundedRectangleBorder(borderRadius: borderRadius),
             textStyle: const TextStyle(
               fontSize: FontSizes.normal,

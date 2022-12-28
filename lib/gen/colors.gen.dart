@@ -28,6 +28,9 @@ class ColorName {
   /// Color: #FCFCFC
   static const Color gray = Color(0xFFFCFCFC);
 
+  /// Color: #F5FCFF
+  static const Color primaryAccent = Color(0xFFF5FCFF);
+
   /// Color: #0065FF
   static const Color primaryColor = Color(0xFF0065FF);
 

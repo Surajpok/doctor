@@ -51,6 +51,7 @@ class RadiusSize {
 
   static const double containerRadius = 50.0;
   static const double containerRadiusSmall = 20.0;
+  static const double containerRadiusTiny = 10.0;
 
   static const double catagoryItemRadius = 100.0;
 

@@ -40,7 +40,7 @@ class HeroSection extends StatelessWidget {
                           "Welcome!\nZhafira",
                           style: TextStyle(
                             fontSize: FontSizes.headline1,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w600,
                             height: LineHeight.large,
                           ),
                         ),
@@ -48,7 +48,7 @@ class HeroSection extends StatelessWidget {
                           "Have a nice day ☺️",
                           style: TextStyle(
                             fontSize: FontSizes.normal,
-                            fontWeight: FontWeight.normal,
+                            fontWeight: FontWeight.w400,
                             height: LineHeight.superLarge,
                             color: ColorName.black,
                           ),

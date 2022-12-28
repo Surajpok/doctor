@@ -11,7 +11,7 @@ class AppoitmentSection extends StatelessWidget {
       child: Stack(
         children: <Widget>[
           Container(
-            width: ScreenSize.screenWidth,
+            // width: ScreenSize.screenWidth,
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(
@@ -25,13 +25,11 @@ class AppoitmentSection extends StatelessWidget {
               ],
             ),
             child: InkWell(
-              onTap: () {
-                print('hello');
-              },
+              onTap: () {},
               child: Padding(
                 padding: const EdgeInsets.all(Paddings.normal),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
@@ -73,7 +71,7 @@ class AppoitmentSection extends StatelessWidget {
                                   : _name,
                               style: const TextStyle(
                                   fontSize: FontSizes.headline2,
-                                  fontWeight: FontWeight.w700),
+                                  fontWeight: FontWeight.w500),
                             ),
                             Text(
                               // "Cardiologist- Kathmandu Medical College",
@@ -87,7 +85,90 @@ class AppoitmentSection extends StatelessWidget {
                               ),
                             ),
                           ],
-                        )
+                        ),
+                      ],
+                    ),
+                    Container(
+                      decoration: const BoxDecoration(
+                        color: ColorName.primaryAccent,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(RadiusSize.containerRadiusTiny),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(Paddings.normal),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Row(
+                              children: const [
+                                Icon(
+                                  MyIcons.calander,
+                                  color: ColorName.primaryColor,
+                                ),
+                                SizedBox(
+                                  width: Margins.minimum,
+                                ),
+                                Text(
+                                  "Monday, Sep 29",
+                                  style: TextStyle(
+                                    fontSize: FontSizes.normal,
+                                    color: ColorName.black,
+                                    fontWeight: FontWeight.w500,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Icon(
+                                  MyIcons.clock,
+                                  color: ColorName.primaryColor,
+                                ),
+                                SizedBox(
+                                  width: Margins.minimum,
+                                ),
+                                Text(
+                                  "11 : 00, 12 : 00",
+                                  style: TextStyle(
+                                    fontSize: FontSizes.normal,
+                                    color: ColorName.black,
+                                    fontWeight: FontWeight.w500,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        MyTextButton(
+                          width: ScreenSize.screenWidth * 0.35,
+                          borderRadius: BorderRadius.circular(
+                              RadiusSize.roundButtonRadius),
+                          onPressed: () {},
+                          child: const Text('Cancel'),
+                        ),
+                        MyElevatedButton(
+                          width: ScreenSize.screenWidth * 0.35,
+                          borderRadius: BorderRadius.circular(
+                              RadiusSize.roundButtonRadius),
+                          onPressed: () {},
+                          child: const Text(
+                            'Reschedule',
+                            style: TextStyle(
+                              fontSize: FontSizes.normal,
+                            ),
+                          ),
+                        ),
                       ],
                     )
                   ],
