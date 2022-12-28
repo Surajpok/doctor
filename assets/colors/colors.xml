@@ -7,8 +7,8 @@
     <color name="gradient_first">#0088FF</color>
     <color name="gradient_second">#0065FF</color>
 
-
     <color name="secondary_accent">#DFE2E6</color>
+    <color name="shadow_color">#F4F5F5</color>
 
 
     <color name="gray">#FCFCFC</color>

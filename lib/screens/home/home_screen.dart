@@ -1,3 +1,4 @@
+import 'package:doctor/components/appointment_section.dart';
 import 'package:doctor/components/category_section.dart';
 import 'package:doctor/imports.dart';
 
@@ -27,12 +28,12 @@ class HomeScreen extends StatelessWidget {
 
 Widget _buildBody(BuildContext context) {
   return SizedBox(
-    height: ScreenSize.screenHeight * 1.5,
+    height: ScreenSize.screenHeight * 1.3,
     child: Stack(
       children: <Widget>[
         const HeroSection(),
         Positioned(
-          top: 430,
+          top: ScreenSize.screenHeight * 0.45,
           child: Container(
             width: ScreenSize.screenWidth,
             height: ScreenSize.screenHeight * 0.9,
@@ -45,7 +46,9 @@ Widget _buildBody(BuildContext context) {
             ),
             child: Padding(
               padding: const EdgeInsets.only(
-                  top: Paddings.content, left: Paddings.normal),
+                  top: Paddings.content,
+                  left: Paddings.normal,
+                  right: Paddings.normal),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,6 +61,20 @@ Widget _buildBody(BuildContext context) {
                     ),
                   ),
                   CategorySection(),
+                  SizedBox(
+                    height: Paddings.minimum,
+                  ),
+                  Text(
+                    'My Appointments',
+                    style: TextStyle(
+                      fontSize: FontSizes.headline2,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(
+                    height: Paddings.normal,
+                  ),
+                  AppoitmentSection(),
                 ],
               ),
             ),

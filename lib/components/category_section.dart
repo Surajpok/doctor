@@ -16,7 +16,8 @@ class CategorySection extends StatelessWidget {
             shrinkWrap: true,
             itemBuilder: (context, index) {
               return Container(
-                margin: const EdgeInsets.only(right: Paddings.normal),
+                margin: const EdgeInsets.only(
+                    right: Paddings.normal, left: Margins.normal),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -61,7 +62,8 @@ class CategorySection extends StatelessWidget {
                       Category.categories[index].name,
                       style: const TextStyle(
                         color: Colors.black,
-                        fontSize: FontSizes.headline2,
+                        fontSize: FontSizes.normal,
+                        fontWeight: FontWeight.w600,
                       ),
                       overflow: TextOverflow.ellipsis,
                     ),

@@ -2,7 +2,7 @@ class Margins {
   Margins._();
 
   static const double minimum = 8.0;
-  static const double normal = 20.0;
+  static const double normal = 12.0;
 }
 
 class Paddings {
@@ -26,10 +26,13 @@ class ContainerSizes {
   ContainerSizes._();
 
   // homepage Hero
-  static const double heroHeight = 0.5;
+  static const double heroHeight = 0.55;
   static const double heroTextColumnHeight = 300;
-  static const double categoryItemRowHeight = 200;
+
+  static const double categoryItemRowHeight = 180;
   static const double iconBoxHeightWidth = 100;
+
+  static const double imageBoxHeightWidth = 0.09;
 }
 
 class FontSizes {
@@ -41,13 +44,13 @@ class FontSizes {
 
   static const double label = 12.0;
   static const double placeholder = 14.0;
-  static const double intro = 18.0;
 }
 
 class RadiusSize {
   RadiusSize._();
 
   static const double containerRadius = 50.0;
+  static const double containerRadiusSmall = 20.0;
 
   static const double catagoryItemRadius = 100.0;
 
@@ -60,7 +63,8 @@ class UiSize {
 
   static const double sizedBoxWidth = 30;
   // hero section
-  static const double heroTextButtonGap = 60;
+  static const double heroTextButtonGap = 40;
+  static const double heroTextTopGap = 20;
 }
 
 class LineHeight {

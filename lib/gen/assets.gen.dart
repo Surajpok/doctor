@@ -34,11 +34,14 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/doctor.png
+  AssetGenImage get doctor => const AssetGenImage('assets/images/doctor.png');
+
   /// File path: assets/images/model.png
   AssetGenImage get model => const AssetGenImage('assets/images/model.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [model];
+  List<AssetGenImage> get values => [doctor, model];
 }
 
 class Assets {

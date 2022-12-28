@@ -27,12 +27,15 @@ class HeroSection extends StatelessWidget {
               SizedBox(
                 height: ContainerSizes.heroTextColumnHeight,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
+                        SizedBox(
+                          height: UiSize.heroTextTopGap,
+                        ),
                         Text(
                           "Welcome!\nZhafira",
                           style: TextStyle(
@@ -41,7 +44,6 @@ class HeroSection extends StatelessWidget {
                             height: LineHeight.large,
                           ),
                         ),
-                        FittedBox(),
                         Text(
                           "Have a nice day ☺️",
                           style: TextStyle(

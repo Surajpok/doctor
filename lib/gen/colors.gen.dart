@@ -34,6 +34,9 @@ class ColorName {
   /// Color: #DFE2E6
   static const Color secondaryAccent = Color(0xFFDFE2E6);
 
+  /// Color: #F4F5F5
+  static const Color shadowColor = Color(0xFFF4F5F5);
+
   /// Color: #0088FF
   static const Color textButtonColor = Color(0xFF0088FF);
 
