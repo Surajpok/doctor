@@ -27,8 +27,8 @@ class HomeScreen extends StatelessWidget {
 }
 
 Widget _buildBody(BuildContext context) {
-  return SizedBox(
-    height: ScreenSize.screenHeight * 1.3,
+  return Container(
+    height: ScreenSize.screenHeight * 1.5,
     child: Stack(
       children: <Widget>[
         const HeroSection(),
@@ -36,9 +36,8 @@ Widget _buildBody(BuildContext context) {
           top: ScreenSize.screenHeight * 0.45,
           child: Container(
             width: ScreenSize.screenWidth,
-            height: ScreenSize.screenHeight * 0.9,
             decoration: const BoxDecoration(
-              color: Colors.white,
+              color: ColorName.white,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(RadiusSize.containerRadius),
                 topRight: Radius.circular(RadiusSize.containerRadius),
@@ -46,9 +45,11 @@ Widget _buildBody(BuildContext context) {
             ),
             child: Padding(
               padding: const EdgeInsets.only(
-                  top: Paddings.content,
-                  left: Paddings.normal,
-                  right: Paddings.normal),
+                top: Paddings.content,
+                left: Paddings.normal,
+                right: Paddings.normal,
+                bottom: Paddings.content,
+              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,

@@ -32,6 +32,8 @@ class ContainerSizes {
   static const double categoryItemRowHeight = 180;
   static const double iconBoxHeightWidth = 100;
 
+// appointment
+  static const double aContainerheight = 280;
   static const double imageBoxHeightWidth = 0.09;
 }
 
@@ -41,6 +43,7 @@ class FontSizes {
   static const double headline1 = 34.0;
   static const double headline2 = 18.0;
   static const double normal = 16.0;
+  static const double small = 14.0;
 
   static const double label = 12.0;
   static const double placeholder = 14.0;
