@@ -6,16 +6,10 @@ class MyIcons {
   // home page icons
   static const heroButtonIcon = IconlyLight.message;
 
-  static const home = IconlyLight.home;
-  static const heart = IconlyLight.heart;
-  static const search = IconlyLight.search;
-  static const bell = IconlyLight.notification;
-  static const cart = IconlyLight.buy;
-  static const back = IconlyLight.arrow_left;
-
   // appointment icon
   static const calander = IconlyLight.calendar;
   static const clock = IconlyLight.time_circle;
+  static const dots = Icons.more_vert;
 
 //drawer icons
   static const profile = IconlyLight.profile;

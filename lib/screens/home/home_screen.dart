@@ -28,12 +28,11 @@ class HomeScreen extends StatelessWidget {
 
 Widget _buildBody(BuildContext context) {
   return Container(
-    height: ScreenSize.screenHeight * 1.5,
     child: Stack(
       children: <Widget>[
         const HeroSection(),
-        Positioned(
-          top: ScreenSize.screenHeight * 0.45,
+        Padding(
+          padding: EdgeInsets.only(top: ScreenSize.screenHeight * 0.45),
           child: Container(
             width: ScreenSize.screenWidth,
             decoration: const BoxDecoration(
@@ -53,29 +52,43 @@ Widget _buildBody(BuildContext context) {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
+                children: [
+                  const Text(
                     'Ecare Services',
                     style: TextStyle(
                       fontSize: FontSizes.headline2,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  CategorySection(),
-                  SizedBox(
+                  const CategorySection(),
+                  const SizedBox(
                     height: Paddings.minimum,
                   ),
-                  Text(
-                    'My Appointments',
-                    style: TextStyle(
-                      fontSize: FontSizes.headline2,
-                      fontWeight: FontWeight.w600,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text(
+                        'My Appointments',
+                        style: TextStyle(
+                          fontSize: FontSizes.headline2,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Text(
+                        'See All',
+                        style: TextStyle(
+                          fontSize: FontSizes.headline2,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.primaryColor,
+                        ),
+                      ),
+                    ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: Paddings.normal,
                   ),
-                  AppoitmentSection(),
+                  const AppoitmentSection(),
                 ],
               ),
             ),
