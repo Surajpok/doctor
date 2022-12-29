@@ -33,7 +33,7 @@ class ContainerSizes {
   static const double iconBoxHeightWidth = 100;
 
 // appointment
-  static const double aContainerheight = 280;
+  static const double appointContainerheight = 250;
   static const double imageBoxHeightWidth = 0.09;
 }
 

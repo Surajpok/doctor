@@ -9,7 +9,7 @@ class AppoitmentSection extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Container(
-          height: ContainerSizes.aContainerheight,
+          height: ContainerSizes.appointContainerheight,
           decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(
