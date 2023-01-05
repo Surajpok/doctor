@@ -28,6 +28,7 @@ class HomeScreen extends StatelessWidget {
 
 Widget _buildBody(BuildContext context) {
   return Container(
+    margin: const EdgeInsets.only(bottom: Margins.bottom),
     child: Stack(
       children: <Widget>[
         const HeroSection(),

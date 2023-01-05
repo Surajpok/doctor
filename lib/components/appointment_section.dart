@@ -89,7 +89,10 @@ Widget _buildProfile(BuildContext context) {
           ],
         ),
       ),
-      const Icon(MyIcons.dots),
+      const Icon(
+        MyIcons.dots,
+        size: 30,
+      ),
     ],
   );
 }

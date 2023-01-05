@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Food App',
       theme: appTheme(),
       onGenerateRoute: Routes.onGenerateRoute,
-      initialRoute: '/home',
+      initialRoute: '/',
     );
   }
 }

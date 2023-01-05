@@ -11,7 +11,12 @@ class MyIcons {
   static const clock = IconlyLight.time_circle;
   static const dots = Icons.more_vert;
 
-//drawer icons
+  //bottom_nav icons
+  static const home = IconlyLight.home;
+  static const chat = IconlyLight.chat;
+  static const bell = IconlyLight.notification;
+
+  //drawer icons
   static const profile = IconlyLight.profile;
   static const payment = IconlyLight.bag;
   static const setting = IconlyLight.setting;

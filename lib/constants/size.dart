@@ -3,6 +3,7 @@ class Margins {
 
   static const double minimum = 8.0;
   static const double normal = 12.0;
+  static const double bottom = 70.0;
 }
 
 class Paddings {
@@ -33,7 +34,7 @@ class ContainerSizes {
   static const double iconBoxHeightWidth = 100;
 
 // appointment
-  static const double appointContainerheight = 250;
+  static const double appointContainerheight = 270;
   static const double imageBoxHeightWidth = 0.09;
 }
 
@@ -60,6 +61,9 @@ class RadiusSize {
 
   static const buttonRadius = 20.0;
   static const roundButtonRadius = 50.0;
+
+  //bottom menu
+  static const bottomMenuRadius = 40.0;
 }
 
 class UiSize {
@@ -69,6 +73,9 @@ class UiSize {
   // hero section
   static const double heroTextButtonGap = 40;
   static const double heroTextTopGap = 20;
+
+  // bottom menu
+  static const double bottomMenuHeight = 80;
 }
 
 class LineHeight {
