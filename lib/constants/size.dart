@@ -28,7 +28,7 @@ class ContainerSizes {
   ContainerSizes._();
   // appbar size
   static const double chatAppBarHeight = 0.25;
-  static const double appBarImgHeightWidth = 0.12;
+  static const double appBarImgHeightWidth = 50;
 
   // homepage Hero
   static const double heroHeight = 0.55;

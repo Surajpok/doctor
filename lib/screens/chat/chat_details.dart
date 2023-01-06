@@ -1,3 +1,4 @@
+import 'package:doctor/components/navigation/app_bar.dart';
 import 'package:doctor/imports.dart';
 
 class ChatDetails extends StatefulWidget {
@@ -14,50 +15,36 @@ class _ChatDetailsState extends State<ChatDetails> {
   Widget build(BuildContext context) {
     ScreenSize.init(context);
     return Scaffold(
+      appBar: MainAppBar.defaultAppBar(
+        context,
+        title: 'Dr. Kawsar Ahmad',
+        height: 70,
+        color: ColorName.secondaryAccent,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(
+                vertical: Paddings.minimum, horizontal: Paddings.minimum),
+            child: Container(
+              width: ContainerSizes.appBarImgHeightWidth,
+              height: ContainerSizes.appBarImgHeightWidth,
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(RadiusSize.containerRadius),
+                image: DecorationImage(
+                  image: AssetImage(Assets.images.doctor.path),
+                  fit: BoxFit.cover, //change image fill type
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
       body: SafeArea(
         top: false,
         child: Stack(
           children: [
             CustomScrollView(
               slivers: [
-                SliverAppBar(
-                  pinned: true,
-                  toolbarHeight: 75,
-                  leading: IconButton(
-                    icon: const Icon(
-                      MyIcons.back,
-                      size: IconSizes.smallIcon,
-                    ),
-                    onPressed: () => Navigator.pop(context),
-                  ),
-                  actions: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: Paddings.minimum,
-                          horizontal: Paddings.minimum),
-                      child: Container(
-                        width: ScreenSize.screenWidth *
-                            ContainerSizes.appBarImgHeightWidth,
-                        height: ScreenSize.screenHeight *
-                            ContainerSizes.appBarImgHeightWidth,
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius:
-                              BorderRadius.circular(RadiusSize.containerRadius),
-                          image: DecorationImage(
-                            image: AssetImage(Assets.images.doctor.path),
-                            fit: BoxFit.cover, //change image fill type
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                  flexibleSpace: FlexibleSpaceBar(
-                    background: Container(
-                      color: ColorName.secondaryAccent,
-                    ),
-                  ),
-                ),
                 SliverPadding(
                   padding: const EdgeInsets.all(Paddings.normal),
                   sliver: SliverList(

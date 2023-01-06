@@ -5,8 +5,12 @@ abstract class MainAppBar {
     BuildContext context, {
     String title = '',
     List<Widget>? actions,
+    double? height,
+    Color? color,
   }) {
     return AppBar(
+      backgroundColor: color,
+      toolbarHeight: height,
       leading: IconButton(
         onPressed: (() => Navigator.pop(context)),
         icon: const Icon(
@@ -17,12 +21,12 @@ abstract class MainAppBar {
       title: Text(
         title,
         style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 24,
-          color: Color(0xFF212121),
+          fontWeight: FontWeight.w600,
+          fontSize: FontSizes.headline2,
+          color: ColorName.black,
         ),
       ),
-      centerTitle: false,
+      centerTitle: true,
       actions: actions,
     );
   }

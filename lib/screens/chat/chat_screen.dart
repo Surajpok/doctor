@@ -46,50 +46,65 @@ class _ChatScreenState extends State<ChatScreen> {
                       background: Column(
                         children: <Widget>[
                           SizedBox(height: ScreenSize.screenHeight * 0.15),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                  RadiusSize.containerRadius),
-                              color: ColorName.white,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: Paddings.minimum,
                             ),
-                            width: ScreenSize.screenWidth * 0.9,
-                            child: TextField(
-                              style: const TextStyle(
-                                color: ColorName.black,
-                                fontSize: FontSizes.normal,
-                              ),
-                              onChanged: (value) {
-                                if (value.length > 0) {
-                                  setState(() {
-                                    sendButton = true;
-                                  });
-                                } else {
-                                  setState(() {
-                                    sendButton = false;
-                                  });
-                                }
-                              },
-                              decoration: const InputDecoration(
-                                isDense: true,
-                                hintText: 'Search',
-                                hintStyle: TextStyle(
-                                    color: ColorName.gray,
-                                    fontSize: FontSizes.normal),
-                                border: InputBorder.none,
-                                focusedBorder: InputBorder.none,
-                                enabledBorder: InputBorder.none,
-                                disabledBorder: InputBorder.none,
-                                prefixIcon: Icon(
-                                  MyIcons.search,
-                                  size: IconSizes.smallIcon,
-                                  color: ColorName.gray,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(
+                                        RadiusSize.containerRadius),
+                                    color: ColorName.white,
+                                  ),
+                                  width: ScreenSize.screenWidth * 0.8,
+                                  child: TextField(
+                                    style: const TextStyle(
+                                      color: ColorName.black,
+                                      fontSize: FontSizes.normal,
+                                    ),
+                                    onChanged: (value) {
+                                      if (value.length > 0) {
+                                        setState(() {
+                                          sendButton = true;
+                                        });
+                                      } else {
+                                        setState(() {
+                                          sendButton = false;
+                                        });
+                                      }
+                                    },
+                                    decoration: const InputDecoration(
+                                      isDense: true,
+                                      hintText: 'Search',
+                                      hintStyle: TextStyle(
+                                          color: ColorName.gray,
+                                          fontSize: FontSizes.normal),
+                                      border: InputBorder.none,
+                                      focusedBorder: InputBorder.none,
+                                      enabledBorder: InputBorder.none,
+                                      disabledBorder: InputBorder.none,
+                                      prefixIcon: Icon(
+                                        MyIcons.search,
+                                        size: IconSizes.smallIcon,
+                                        color: ColorName.gray,
+                                      ),
+                                      contentPadding: EdgeInsets.symmetric(
+                                          horizontal: Paddings.content,
+                                          vertical: Paddings.normal),
+                                    ),
+                                  ),
                                 ),
-                                contentPadding: EdgeInsets.symmetric(
-                                    horizontal: Paddings.content,
-                                    vertical: Paddings.normal),
-                              ),
+                                IconButton(
+                                  icon: const Icon(MyIcons.filter),
+                                  color: ColorName.white,
+                                  onPressed: () {},
+                                ),
+                              ],
                             ),
-                          ),
+                          )
                         ],
                       ),
                     ),
@@ -102,10 +117,8 @@ class _ChatScreenState extends State<ChatScreen> {
                             top: Paddings.minimum,
                             bottom: Paddings.minimum),
                         child: Container(
-                          width: ScreenSize.screenWidth *
-                              ContainerSizes.appBarImgHeightWidth,
-                          height: ScreenSize.screenHeight *
-                              ContainerSizes.appBarImgHeightWidth,
+                          width: ContainerSizes.appBarImgHeightWidth,
+                          height: ContainerSizes.appBarImgHeightWidth,
                           decoration: BoxDecoration(
                             color: Colors.blue,
                             borderRadius: BorderRadius.circular(

@@ -8,7 +8,11 @@ class AppointmentScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Text('Appointment'),
+          child: Column(
+            children: const [
+              AppoitmentSection(),
+            ],
+          ),
         ),
       ),
     );

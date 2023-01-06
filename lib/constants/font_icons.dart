@@ -17,8 +17,9 @@ class MyIcons {
   static const bell = IconlyLight.notification;
 
   // appbar icon
-  static const back = IconlyLight.arrow_left;
+  static const back = IconlyLight.arrow_left_2;
   static const search = IconlyLight.search;
+  static const filter = IconlyLight.filter; //Icons.tune
 
   // chat box
   static const mic = Icons.mic;
