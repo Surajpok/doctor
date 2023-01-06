@@ -20,11 +20,15 @@ class IconSizes {
   static const double avatar = 50.0;
 
   static const double appBarItem = 30.0;
-  static const double smallIcon = 20.0;
+
+  static const double smallIcon = 30.0;
 }
 
 class ContainerSizes {
   ContainerSizes._();
+  // appbar size
+  static const double chatAppBarHeight = 0.25;
+  static const double appBarImgHeightWidth = 0.12;
 
   // homepage Hero
   static const double heroHeight = 0.55;
@@ -36,6 +40,10 @@ class ContainerSizes {
 // appointment
   static const double appointContainerheight = 270;
   static const double imageBoxHeightWidth = 0.09;
+
+// message tile
+  static const double msgTileImgHeightWidth = 0.08;
+  static const double msgTileHeight = 0.1;
 }
 
 class FontSizes {
@@ -76,6 +84,9 @@ class UiSize {
 
   // bottom menu
   static const double bottomMenuHeight = 80;
+
+  // chat box
+  static const double chatBoxHeight = 80;
 }
 
 class LineHeight {

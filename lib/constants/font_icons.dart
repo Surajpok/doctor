@@ -16,6 +16,15 @@ class MyIcons {
   static const chat = IconlyLight.chat;
   static const bell = IconlyLight.notification;
 
+  // appbar icon
+  static const back = IconlyLight.arrow_left;
+  static const search = IconlyLight.search;
+
+  // chat box
+  static const mic = Icons.mic;
+  static const attachment = Icons.attach_file;
+  static const send = Icons.send_sharp;
+
   //drawer icons
   static const profile = IconlyLight.profile;
   static const payment = IconlyLight.bag;

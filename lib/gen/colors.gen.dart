@@ -25,8 +25,8 @@ class ColorName {
   /// Color: #0065FF
   static const Color gradientSecond = Color(0xFF0065FF);
 
-  /// Color: #FCFCFC
-  static const Color gray = Color(0xFFFCFCFC);
+  /// Color: #838383
+  static const Color gray = Color(0xFF838383);
 
   /// Color: #F5FCFF
   static const Color primaryAccent = Color(0xFFF5FCFF);
