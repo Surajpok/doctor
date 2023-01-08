@@ -44,7 +44,7 @@ class ContainerSizes {
 // message tile
   static const double msgTileImgHeightWidth = 0.08;
   static const double msgTileHeight = 0.1;
-  static const double msgWidth = 0.5;
+  static const double msgWidth = 0.6;
 }
 
 class FontSizes {
