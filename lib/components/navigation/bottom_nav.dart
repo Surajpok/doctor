@@ -70,7 +70,7 @@ class _BottomNavState extends State<BottomNav> {
         ],
         color: ColorName.white,
         height: UiSize.bottomMenuHeight,
-        circleWidth: UiSize.bottomMenuHeight,
+        circleWidth: UiSize.bottomCircleWidth,
         circleGradient: const LinearGradient(
             colors: [ColorName.gradientFirst, ColorName.gradientSecond]),
         activeIndex: tabIndex,

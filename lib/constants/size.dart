@@ -44,6 +44,7 @@ class ContainerSizes {
 // message tile
   static const double msgTileImgHeightWidth = 0.08;
   static const double msgTileHeight = 0.1;
+  static const double msgWidth = 0.5;
 }
 
 class FontSizes {
@@ -84,6 +85,7 @@ class UiSize {
 
   // bottom menu
   static const double bottomMenuHeight = 80;
+  static const double bottomCircleWidth = 70;
 
   // chat box
   static const double chatBoxHeight = 80;

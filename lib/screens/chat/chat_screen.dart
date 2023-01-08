@@ -97,11 +97,21 @@ class _ChatScreenState extends State<ChatScreen> {
                                     ),
                                   ),
                                 ),
-                                IconButton(
-                                  icon: const Icon(MyIcons.filter),
-                                  color: ColorName.white,
-                                  onPressed: () {},
-                                ),
+                                Container(
+                                  height: 60,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                    color: ColorName.white,
+                                    borderRadius: BorderRadius.circular(
+                                        RadiusSize.containerRadiusSmall),
+                                  ),
+                                  child: IconButton(
+                                    icon: const Icon(MyIcons.filter),
+                                    // iconSize: IconSizes.smallIcon,
+                                    color: ColorName.gray,
+                                    onPressed: () {},
+                                  ),
+                                )
                               ],
                             ),
                           )
@@ -155,6 +165,10 @@ class _ChatScreenState extends State<ChatScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: const [
+        Messagetile(),
+        Messagetile(),
+        Messagetile(),
+        Messagetile(),
         Messagetile(),
         Messagetile(),
         Messagetile(),
