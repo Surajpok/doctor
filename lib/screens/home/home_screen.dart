@@ -86,9 +86,9 @@ Widget _buildBody(BuildContext context) {
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: Paddings.normal,
-                  ),
+                  // const SizedBox(
+                  //   height: Paddings.normal,
+                  // ),
                   const AppoitmentSection(),
                 ],
               ),

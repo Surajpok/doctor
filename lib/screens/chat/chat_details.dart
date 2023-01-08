@@ -18,6 +18,7 @@ class _ChatDetailsState extends State<ChatDetails> {
       appBar: MainAppBar.defaultAppBar(
         context,
         title: 'Dr. Kawsar Ahmad',
+        leading: true,
         height: 70,
         color: ColorName.secondaryAccent,
         actions: [
