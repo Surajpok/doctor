@@ -7,3 +7,4 @@ export 'appointment_section.dart';
 export 'chat/chat_detail_tile.dart';
 export 'navigation/app_bar.dart';
 export 'doctor_tile.dart';
+export 'notification_tile.dart';
