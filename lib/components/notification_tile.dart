@@ -17,7 +17,10 @@ class _NotificationTileState extends State<NotificationTile> {
         children: [
           const Flexible(
             flex: 1,
-            child: Icon(MyIcons.calander),
+            child: Icon(
+              MyIcons.calander,
+              size: IconSizes.appBarItem,
+            ),
           ),
           Flexible(
             flex: 9,
