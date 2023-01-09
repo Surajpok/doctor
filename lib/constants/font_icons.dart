@@ -39,5 +39,6 @@ class MyIcons {
   static const remove = Icons.remove;
   static const add = Icons.add;
   static const star = Icons.star;
+  static const heart = IconlyLight.heart;
   static const fire = Icons.whatshot;
 }

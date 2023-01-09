@@ -36,17 +36,22 @@ class _DoctortileState extends State<Doctortile> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height:
-                ScreenSize.screenHeight * ContainerSizes.doctorImgHeightWidth,
-            decoration: BoxDecoration(
-              color: ColorName.primaryAccent,
-              borderRadius: const BorderRadius.all(
-                Radius.circular(RadiusSize.containerRadiusSmall),
-              ),
-              image: DecorationImage(
-                image: AssetImage(Assets.images.doctor.path),
-                fit: BoxFit.contain, //change image fill type
+          InkWell(
+            onTap:() {
+              
+            },
+            child: Container(
+              height:
+                  ScreenSize.screenHeight * ContainerSizes.doctorImgHeightWidth,
+              decoration: BoxDecoration(
+                color: ColorName.primaryAccent,
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(RadiusSize.containerRadiusSmall),
+                ),
+                image: DecorationImage(
+                  image: AssetImage(Assets.images.doctor.path),
+                  fit: BoxFit.contain, //change image fill type
+                ),
               ),
             ),
           ),
@@ -63,13 +68,36 @@ class _DoctortileState extends State<Doctortile> {
           const SizedBox(
             height: Paddings.minimum,
           ),
-          Text(
+          const Text(
             'Specialist Dentist',
             style: TextStyle(
                 fontSize: FontSizes.small,
                 fontWeight: FontWeight.w500,
                 color: ColorName.gray),
           ),
+          const SizedBox(
+            height: Paddings.minimum,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                  child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Icon(
+                    MyIcons.star,
+                    color: Colors.amber,
+                  ),
+                  SizedBox(
+                    height: Paddings.minimum,
+                  ),
+                  Text('150'),
+                ],
+              )),
+              Icon(MyIcons.heart),
+            ],
+          )
         ],
       ),
     );

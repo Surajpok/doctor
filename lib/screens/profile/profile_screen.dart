@@ -77,6 +77,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           fontSize: FontSizes.headline2,
                         ),
                       ),
+                      const SizedBox(
+                        height: Paddings.normal,
+                      ),
                     ],
                   ),
                 ),
