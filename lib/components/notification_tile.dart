@@ -12,24 +12,35 @@ class NotificationTile extends StatefulWidget {
 class _NotificationTileState extends State<NotificationTile> {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Flexible(
-          flex: 1,
-          child: Icon(MyIcons.calander),
-        ),
-        Flexible(
-          flex: 9,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text("Your have appointment with mahbuba islam at 9:00 pm today"),
-              Text("Just Now"),
-            ],
+    return Container(
+      height: ScreenSize.screenHeight * 0.07,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Flexible(
+            flex: 1,
+            child: Icon(MyIcons.calander),
           ),
-        )
-      ],
+          Flexible(
+            flex: 9,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text(
+                  "Your have appointment with mahbuba islam at 9:00 pm today",
+                  style: TextStyle(fontSize: FontSizes.normal),
+                ),
+                Text(
+                  "Just Now",
+                  style: TextStyle(
+                      fontSize: FontSizes.normal, color: ColorName.gray),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
