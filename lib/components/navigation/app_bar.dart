@@ -30,7 +30,11 @@ abstract class MainAppBar {
             fontSize: FontSizes.headline2,
             fontWeight: FontWeight.w600),
       ),
-      centerTitle: leading ? true : false,
+      centerTitle: leading
+          ? true
+          : false || actions == null
+              ? true
+              : false,
       actions: actions,
     );
   }

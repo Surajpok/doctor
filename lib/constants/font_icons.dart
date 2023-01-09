@@ -29,9 +29,12 @@ class MyIcons {
   //drawer icons
   static const profile = IconlyLight.profile;
   static const payment = IconlyLight.bag;
+  static const password = IconlyLight.lock;
+  static const location = IconlyLight.location;
   static const setting = IconlyLight.setting;
   static const help = IconlyLight.chat;
   static const privacy = IconlyLight.bookmark;
+  static const logout = IconlyLight.logout;
 
   static const remove = Icons.remove;
   static const add = Icons.add;

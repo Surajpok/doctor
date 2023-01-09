@@ -1,4 +1,3 @@
-import 'package:doctor/components/navigation/app_bar.dart';
 import 'package:doctor/imports.dart';
 
 class ChatDetails extends StatefulWidget {
@@ -69,7 +68,6 @@ class _ChatDetailsState extends State<ChatDetails> {
       mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: const [
-        ChatDetailsTile(),
         ChatDetailsTile(),
       ],
     );

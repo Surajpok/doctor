@@ -1,4 +1,3 @@
-import 'package:doctor/components/navigation/app_bar.dart';
 import 'package:doctor/imports.dart';
 
 class AppointmentScreen extends StatefulWidget {
@@ -18,7 +17,7 @@ class _AppointmentScreenState extends State<AppointmentScreen>
         context,
         title: 'Appointments',
         leading: false,
-        height: 70,
+        height: 55,
         color: ColorName.secondaryAccent,
         actions: [
           const Padding(

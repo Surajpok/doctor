@@ -86,10 +86,38 @@ Widget _buildBody(BuildContext context) {
                       ),
                     ],
                   ),
-                  // const SizedBox(
-                  //   height: Paddings.normal,
-                  // ),
                   const AppoitmentSection(),
+                  const SizedBox(
+                    height: Paddings.normal,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text(
+                        'Available Doctors',
+                        style: TextStyle(
+                          fontSize: FontSizes.headline2,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Text(
+                        'See All',
+                        style: TextStyle(
+                          fontSize: FontSizes.headline2,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.primaryColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Doctortile(),
+                      Doctortile(),
+                    ],
+                  )
                 ],
               ),
             ),

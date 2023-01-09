@@ -59,8 +59,9 @@ class _ChatScreenState extends State<ChatScreen> {
                                         RadiusSize.containerRadius),
                                     color: ColorName.white,
                                   ),
-                                  width: ScreenSize.screenWidth * 0.8,
+                                  width: ScreenSize.screenWidth * 0.75,
                                   child: TextField(
+                                    textAlignVertical: TextAlignVertical.center,
                                     style: const TextStyle(
                                       color: ColorName.black,
                                       fontSize: FontSizes.normal,

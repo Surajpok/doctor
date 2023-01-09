@@ -29,6 +29,7 @@ class ContainerSizes {
   // appbar size
   static const double chatAppBarHeight = 0.25;
   static const double appBarImgHeightWidth = 50;
+  static const double profileImgHeightWidth = 90;
 
   // homepage Hero
   static const double heroHeight = 0.55;
@@ -40,6 +41,7 @@ class ContainerSizes {
 // appointment
   static const double appointContainerheight = 270;
   static const double imageBoxHeightWidth = 0.09;
+  static const double doctorImgHeightWidth = 0.15;
 
 // message tile
   static const double msgTileImgHeightWidth = 0.08;
