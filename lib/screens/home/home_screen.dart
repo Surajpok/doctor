@@ -93,20 +93,25 @@ Widget _buildBody(BuildContext context) {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
+                    children: [
+                      const Text(
                         'Available Doctors',
                         style: TextStyle(
                           fontSize: FontSizes.headline2,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      Text(
-                        'See All',
-                        style: TextStyle(
-                          fontSize: FontSizes.headline2,
-                          fontWeight: FontWeight.w600,
-                          color: ColorName.primaryColor,
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/doctors');
+                        },
+                        child: const Text(
+                          'See All',
+                          style: TextStyle(
+                            fontSize: FontSizes.headline2,
+                            fontWeight: FontWeight.w600,
+                            color: ColorName.primaryColor,
+                          ),
                         ),
                       ),
                     ],
