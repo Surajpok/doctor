@@ -51,7 +51,9 @@ class ChatDetailsTile extends StatelessWidget {
               vertical: Paddings.normal, horizontal: Paddings.normal),
           margin: const EdgeInsets.symmetric(vertical: Margins.minimum),
           decoration: BoxDecoration(
-            color: ColorName.secondaryAccent,
+            color: messageType == 'receiver'
+                ? ColorName.primaryColor
+                : ColorName.secondaryAccent,
             // color: Theme.of(context).colorScheme.secondary,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(RadiusSize.containerRadiusSmall),
@@ -68,7 +70,9 @@ class ChatDetailsTile extends StatelessWidget {
             child: Text(
               message,
               style: TextStyle(
-                color: ColorName.black,
+                color: messageType == 'receiver'
+                    ? ColorName.white
+                    : ColorName.black,
                 fontSize: FontSizes.normal,
               ),
             ),

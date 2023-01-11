@@ -1,7 +1,7 @@
 import 'package:doctor/imports.dart';
 
-class IntroSlide extends StatelessWidget {
-  const IntroSlide({super.key});
+class IntroSlide1 extends StatelessWidget {
+  const IntroSlide1({super.key});
 
   @override
   Widget build(BuildContext context) {

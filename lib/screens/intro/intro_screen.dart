@@ -24,9 +24,9 @@ class _IntroScreenState extends State<IntroScreen> {
             controller: _controller,
             scrollDirection: Axis.horizontal,
             children: const [
-              IntroSlide(),
-              IntroSlide(),
-              IntroSlide(),
+              IntroSlide1(),
+              IntroSlide1(),
+              IntroSlide1(),
             ],
           ),
           Container(
@@ -53,7 +53,12 @@ class _IntroScreenState extends State<IntroScreen> {
                   Navigator.pushNamed(context, '/signup');
                 },
                 borderRadius: BorderRadius.circular(RadiusSize.buttonRadius),
-                child: const Text('Create An Account'),
+                child: Text(
+                  'Create An Account',
+                  style: TextStyle(
+                    fontSize: FontSizes.normal,
+                  ),
+                ),
               ),
             ),
           ),
@@ -70,7 +75,10 @@ class _IntroScreenState extends State<IntroScreen> {
                   Navigator.pushNamed(context, '/login');
                 },
                 borderRadius: BorderRadius.circular(RadiusSize.buttonRadius),
-                child: const Text('Login'),
+                child: const Text(
+                  'Login',
+                  style: TextStyle(fontSize: FontSizes.normal),
+                ),
               ),
             ),
           ),
