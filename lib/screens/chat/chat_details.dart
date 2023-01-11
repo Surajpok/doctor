@@ -1,4 +1,5 @@
 import 'package:doctor/imports.dart';
+import 'package:doctor/model/chat_details_model.dart';
 
 class ChatDetails extends StatefulWidget {
   const ChatDetails({super.key});
@@ -67,8 +68,24 @@ class _ChatDetailsState extends State<ChatDetails> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
-        ChatDetailsTile(),
+      children: [
+        ListView.builder(
+          scrollDirection: Axis.vertical,
+          itemCount: ChatDetailsModel.messages.length,
+          padding: EdgeInsets.all(0),
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          itemBuilder: (BuildContext context, int index) {
+            return ChatDetailsTile(
+              date: ChatDetailsModel.messages[index].message,
+              image: ChatDetailsModel.messages[index].image,
+              message: ChatDetailsModel.messages[index].message,
+              name: ChatDetailsModel.messages[index].name,
+              time: ChatDetailsModel.messages[index].time,
+              messageType: ChatDetailsModel.messages[index].messageType,
+            );
+          },
+        )
       ],
     );
   }
@@ -82,70 +99,68 @@ class _ChatDetailsState extends State<ChatDetails> {
         padding: const EdgeInsets.only(
             left: Paddings.normal, right: Paddings.normal),
         child: Container(
+          padding: const EdgeInsets.only(
+              left: Paddings.minimum, right: Paddings.minimum),
           decoration: BoxDecoration(
               color: ColorName.primaryColor,
               borderRadius:
                   BorderRadius.circular(RadiusSize.containerRadiusSmall)),
-          child: Padding(
-            padding: const EdgeInsets.only(
-                left: Paddings.minimum, right: Paddings.minimum),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  width: ScreenSize.screenWidth * 0.55,
-                  child: TextFormField(
-                    style: const TextStyle(
-                      color: ColorName.white,
-                      fontSize: FontSizes.normal,
-                    ),
-                    onChanged: (value) {
-                      if (value.length > 0) {
-                        setState(() {
-                          sendButton = true;
-                        });
-                      } else {
-                        setState(() {
-                          sendButton = false;
-                        });
-                      }
-                    },
-                    decoration: const InputDecoration(
-                      isDense: true,
-                      hintText: 'Enter a message',
-                      hintStyle: TextStyle(color: ColorName.white),
-                      border: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      disabledBorder: InputBorder.none,
-                      contentPadding: EdgeInsets.symmetric(
-                          horizontal: Paddings.minimum,
-                          vertical: Paddings.normal),
-                    ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(
+                width: ScreenSize.screenWidth * 0.55,
+                child: TextFormField(
+                  style: const TextStyle(
+                    color: ColorName.white,
+                    fontSize: FontSizes.normal,
+                  ),
+                  onChanged: (value) {
+                    if (value.isNotEmpty) {
+                      setState(() {
+                        sendButton = true;
+                      });
+                    } else {
+                      setState(() {
+                        sendButton = false;
+                      });
+                    }
+                  },
+                  decoration: const InputDecoration(
+                    isDense: true,
+                    hintText: 'Enter a message',
+                    hintStyle: TextStyle(color: ColorName.white),
+                    border: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    enabledBorder: InputBorder.none,
+                    disabledBorder: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(
+                        horizontal: Paddings.minimum,
+                        vertical: Paddings.normal),
                   ),
                 ),
-                Row(
-                  children: [
-                    SizedBox(
-                      child: IconButton(
-                        icon: Icon(MyIcons.attachment),
-                        color: ColorName.white,
-                        iconSize: IconSizes.smallIcon,
-                        onPressed: () {},
-                      ),
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    child: IconButton(
+                      icon: Icon(MyIcons.attachment),
+                      color: ColorName.white,
+                      iconSize: IconSizes.smallIcon,
+                      onPressed: () {},
                     ),
-                    SizedBox(
-                      child: IconButton(
-                        icon: Icon(sendButton ? MyIcons.send : MyIcons.mic),
-                        color: ColorName.white,
-                        iconSize: IconSizes.smallIcon,
-                        onPressed: () {},
-                      ),
+                  ),
+                  SizedBox(
+                    child: IconButton(
+                      icon: Icon(sendButton ? MyIcons.send : MyIcons.mic),
+                      color: ColorName.white,
+                      iconSize: IconSizes.smallIcon,
+                      onPressed: () {},
                     ),
-                  ],
-                )
-              ],
-            ),
+                  ),
+                ],
+              )
+            ],
           ),
         ),
       ),

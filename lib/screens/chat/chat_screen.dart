@@ -1,4 +1,5 @@
 import 'package:doctor/imports.dart';
+import 'package:doctor/model/chat_model.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
@@ -164,15 +165,28 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Widget _buildBody(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
-        Messagetile(),
-        Messagetile(),
-        Messagetile(),
-        Messagetile(),
-        Messagetile(),
-        Messagetile(),
-        Messagetile(),
+      children: [
+        ListView.builder(
+          scrollDirection: Axis.vertical,
+          itemCount: ChatModel.chats.length,
+          padding: EdgeInsets.all(0),
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          itemBuilder: (BuildContext context, int index) {
+            return ChatTile(
+              date: ChatModel.chats[index].message,
+              image: ChatModel.chats[index].image,
+              message: ChatModel.chats[index].message,
+              name: ChatModel.chats[index].name,
+              time: ChatModel.chats[index].time,
+              onTap: () {
+                Navigator.pushNamed(context, '/chat-details');
+              },
+            );
+          },
+        ),
       ],
     );
   }

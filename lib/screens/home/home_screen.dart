@@ -1,4 +1,3 @@
-import 'package:doctor/components/appointment_section.dart';
 import 'package:doctor/components/category_section.dart';
 import 'package:doctor/imports.dart';
 
@@ -68,20 +67,25 @@ Widget _buildBody(BuildContext context) {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
+                    children: [
+                      const Text(
                         'My Appointments',
                         style: TextStyle(
                           fontSize: FontSizes.headline2,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      Text(
-                        'See All',
-                        style: TextStyle(
-                          fontSize: FontSizes.headline2,
-                          fontWeight: FontWeight.w600,
-                          color: ColorName.primaryColor,
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/appointment');
+                        },
+                        child: const Text(
+                          'See All',
+                          style: TextStyle(
+                            fontSize: FontSizes.headline2,
+                            fontWeight: FontWeight.w600,
+                            color: ColorName.primaryColor,
+                          ),
                         ),
                       ),
                     ],

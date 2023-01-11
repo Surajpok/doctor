@@ -1,3 +1,4 @@
+import 'package:doctor/screens/appointment/appointment_screen.dart';
 import 'package:doctor/screens/chat/chat_details.dart';
 import 'package:doctor/screens/doctor/doctors_screen.dart';
 import 'package:doctor/screens/intro/intro_screen.dart';
@@ -29,6 +30,10 @@ class Routes {
       case '/notification':
         return MaterialPageRoute(
           builder: (context) => const NotifyScreen(),
+        );
+      case '/appointment':
+        return MaterialPageRoute(
+          builder: (context) => const AppointmentScreen(),
         );
       case '/chat-details':
         return MaterialPageRoute(

@@ -45,7 +45,7 @@ class IntroSlide extends StatelessWidget {
             padding:
                 EdgeInsets.only(left: Paddings.normal, right: Paddings.normal),
             child: Text(
-              'Order from your favourite stores or vendors',
+              'Consult Only With Doctor You Trust',
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: FontSizes.slide,

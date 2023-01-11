@@ -1,26 +1,34 @@
 import 'package:doctor/imports.dart';
 
-class Messagetile extends StatefulWidget {
-  const Messagetile({super.key});
+class ChatTile extends StatelessWidget {
+  final String name;
+  final String image;
+  final String date;
+  final String time;
+  final String message;
+  final VoidCallback onTap;
 
-  @override
-  State<Messagetile> createState() => _MessagetileState();
-}
+  const ChatTile({
+    Key? key,
+    required this.onTap,
+    required this.name,
+    required this.image,
+    required this.date,
+    required this.time,
+    required this.message,
+  }) : super(key: key);
 
-class _MessagetileState extends State<Messagetile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: Margins.normal),
+      margin: const EdgeInsets.only(bottom: Margins.minimum),
       height: ScreenSize.screenHeight * ContainerSizes.msgTileHeight,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(RadiusSize.containerRadiusTiny),
-        // color: ColorName.white,
+        // color: ColorName.primaryColor,
       ),
       child: InkWell(
-        onTap: () {
-          Navigator.pushNamed(context, '/chat-details');
-        },
+        onTap: onTap,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -47,9 +55,9 @@ class _MessagetileState extends State<Messagetile> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
-                    "Dr. Kawsar Ahmad",
+                    name,
                     overflow: TextOverflow.clip,
                     maxLines: 1,
                     style: TextStyle(
@@ -57,7 +65,7 @@ class _MessagetileState extends State<Messagetile> {
                         fontWeight: FontWeight.w500),
                   ),
                   Text(
-                    "Yea sure, I just needed some time?",
+                    message,
                     overflow: TextOverflow.clip,
                     maxLines: 1,
                     style: TextStyle(
@@ -71,9 +79,9 @@ class _MessagetileState extends State<Messagetile> {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(
-                  "2:55 AM",
+                  time,
                   overflow: TextOverflow.clip,
                   maxLines: 1,
                   style: TextStyle(
