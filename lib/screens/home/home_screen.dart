@@ -1,5 +1,7 @@
 import 'package:doctor/components/category_section.dart';
 import 'package:doctor/imports.dart';
+import 'package:doctor/model/appointment_model.dart';
+import 'package:doctor/model/doctor_model.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -90,7 +92,25 @@ Widget _buildBody(BuildContext context) {
                       ),
                     ],
                   ),
-                  const AppoitmentSection(),
+                  ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    itemCount: 1,
+                    padding: EdgeInsets.all(0),
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemBuilder: (BuildContext context, int index) {
+                      return AppoitmentSection(
+                        date: AppointmentModel.appointments[index].date,
+                        image: AppointmentModel.appointments[index].image,
+                        name: AppointmentModel.appointments[index].name,
+                        fromTime: AppointmentModel.appointments[index].fromTime,
+                        toTime: AppointmentModel.appointments[index].toTime,
+                        isCancelled:
+                            AppointmentModel.appointments[index].isCancelled,
+                        role: AppointmentModel.appointments[index].role,
+                      );
+                    },
+                  ),
                   const SizedBox(
                     height: Paddings.normal,
                   ),
@@ -120,13 +140,27 @@ Widget _buildBody(BuildContext context) {
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Doctortile(),
-                      Doctortile(),
-                    ],
-                  )
+                  GridView.builder(
+                      padding: const EdgeInsets.all(0),
+                      shrinkWrap: true,
+                      physics:
+                          const NeverScrollableScrollPhysics(), //make grid unscrollable
+                      gridDelegate:
+                          const SliverGridDelegateWithMaxCrossAxisExtent(
+                              maxCrossAxisExtent: 200,
+                              childAspectRatio: 2 / 3,
+                              crossAxisSpacing: Paddings.minimum,
+                              mainAxisSpacing: Paddings.minimum),
+                      itemCount: 2,
+                      itemBuilder: (BuildContext ctx, index) {
+                        return DoctorTile(
+                          name: DoctorModel.doctors[index].name,
+                          image: DoctorModel.doctors[index].image,
+                          role: DoctorModel.doctors[index].role,
+                          totalRating: DoctorModel.doctors[index].totalRating,
+                          onTap: () {},
+                        );
+                      }),
                 ],
               ),
             ),

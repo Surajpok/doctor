@@ -9,8 +9,7 @@ class AppointmentModel extends Equatable {
   final String date;
   final String fromTime;
   final String toTime;
-  final String message;
-  final bool isCurrentUser;
+  final bool isCancelled;
 
   AppointmentModel({
     required this.id,
@@ -19,46 +18,32 @@ class AppointmentModel extends Equatable {
     required this.date,
     required this.fromTime,
     required this.toTime,
-    required this.message,
-    required this.isCurrentUser,
+    required this.isCancelled,
     required this.role,
   });
   @override
   List<Object?> get props =>
-      [id, name, image, role, date, fromTime, toTime, message, isCurrentUser];
+      [id, name, image, role, date, fromTime, toTime, isCancelled];
   static List<AppointmentModel> appointments = [
     AppointmentModel(
       id: 1,
       name: 'Dr. Nabin K. Bhattrai',
       image: Assets.images.doctor.path,
       role: "Cardiologist",
-      date: '2022',
+      date: 'Mon, Sep 29',
       fromTime: '1:00',
       toTime: '2:00',
-      message: "Hi!",
-      isCurrentUser: true,
+      isCancelled: true,
     ),
     AppointmentModel(
-      id: 2,
-      name: 'Dr. Sabin Rai',
-      image: Assets.images.doctor.path,
-      role: "Dentist",
-      date: '2022',
-      fromTime: '1:00',
-      toTime: '2:00',
-      message: "Hey How Are You!",
-      isCurrentUser: true,
-    ),
-    AppointmentModel(
-      id: 3,
-      name: 'Dr. Dipak Bajracharya',
+      id: 1,
+      name: 'Dr. Nabin K. Bhattrai',
       image: Assets.images.doctor.path,
       role: "Cardiologist",
-      date: '2022',
+      date: 'Mon, Sep 29',
       fromTime: '1:00',
       toTime: '2:00',
-      message: "Hello!",
-      isCurrentUser: false,
+      isCancelled: false,
     ),
   ];
 }

@@ -85,7 +85,7 @@ class _ChatDetailsState extends State<ChatDetails> {
               messageType: ChatDetailsModel.messages[index].messageType,
             );
           },
-        )
+        ),
       ],
     );
   }

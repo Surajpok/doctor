@@ -1,4 +1,5 @@
 import 'package:doctor/imports.dart';
+import 'package:doctor/model/appointment_model.dart';
 
 class AppointmentScreen extends StatefulWidget {
   const AppointmentScreen({super.key});
@@ -65,27 +66,78 @@ class _AppointmentScreenState extends State<AppointmentScreen>
                   controller: _tabController,
                   children: [
                     ListView(
-                      children: const [
-                        AppoitmentSection(),
-                        AppoitmentSection(),
-                        AppoitmentSection(),
-                        AppoitmentSection(),
+                      children: [
+                        ListView.builder(
+                          scrollDirection: Axis.vertical,
+                          itemCount: AppointmentModel.appointments.length,
+                          padding: EdgeInsets.all(0),
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (BuildContext context, int index) {
+                            return AppoitmentSection(
+                              date: AppointmentModel.appointments[index].date,
+                              image: AppointmentModel.appointments[index].image,
+                              name: AppointmentModel.appointments[index].name,
+                              fromTime:
+                                  AppointmentModel.appointments[index].fromTime,
+                              toTime:
+                                  AppointmentModel.appointments[index].toTime,
+                              isCancelled: AppointmentModel
+                                  .appointments[index].isCancelled,
+                              role: AppointmentModel.appointments[index].role,
+                            );
+                          },
+                        ),
                       ],
                     ),
                     ListView(
-                      children: const [
-                        AppoitmentSection(),
-                        AppoitmentSection(),
-                        AppoitmentSection(),
-                        AppoitmentSection(),
+                      children: [
+                        ListView.builder(
+                          scrollDirection: Axis.vertical,
+                          itemCount: AppointmentModel.appointments.length,
+                          padding: EdgeInsets.all(0),
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (BuildContext context, int index) {
+                            return AppoitmentSection(
+                              date: AppointmentModel.appointments[index].date,
+                              image: AppointmentModel.appointments[index].image,
+                              name: AppointmentModel.appointments[index].name,
+                              fromTime:
+                                  AppointmentModel.appointments[index].fromTime,
+                              toTime:
+                                  AppointmentModel.appointments[index].toTime,
+                              isCancelled: AppointmentModel
+                                  .appointments[index].isCancelled,
+                              role: AppointmentModel.appointments[index].role,
+                            );
+                          },
+                        )
                       ],
                     ),
                     ListView(
-                      children: const [
-                        AppoitmentSection(),
-                        AppoitmentSection(),
-                        AppoitmentSection(),
-                        AppoitmentSection(),
+                      children: [
+                        ListView.builder(
+                          scrollDirection: Axis.vertical,
+                          itemCount: AppointmentModel.appointments.length,
+                          padding: EdgeInsets.all(0),
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (BuildContext context, int index) {
+                            return AppoitmentSection(
+                              date: AppointmentModel.appointments[index].date,
+                              image: AppointmentModel.appointments[index].image,
+                              name: AppointmentModel.appointments[index].name,
+                              fromTime:
+                                  AppointmentModel.appointments[index].fromTime,
+                              toTime:
+                                  AppointmentModel.appointments[index].toTime,
+                              isCancelled: AppointmentModel
+                                  .appointments[index].isCancelled,
+                              role: AppointmentModel.appointments[index].role,
+                            );
+                          },
+                        ),
                       ],
                     ),
                   ],

@@ -10,6 +10,7 @@ class MyIcons {
   static const calander = IconlyLight.calendar;
   static const clock = IconlyLight.time_circle;
   static const dots = Icons.more_vert;
+  static const close = IconlyLight.close_square;
 
   //bottom_nav icons
   static const home = IconlyLight.home;

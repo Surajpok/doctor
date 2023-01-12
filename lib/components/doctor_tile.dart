@@ -1,17 +1,24 @@
 import 'package:doctor/imports.dart';
 
-class Doctortile extends StatefulWidget {
-  const Doctortile({super.key});
+class DoctorTile extends StatelessWidget {
+  final String name;
+  final String image;
+  final String role;
+  final String totalRating;
+  final VoidCallback? onTap;
+  const DoctorTile({
+    Key? key,
+    required this.name,
+    required this.image,
+    required this.role,
+    required this.totalRating,
+    required this.onTap,
+  }) : super(key: key);
 
-  @override
-  State<Doctortile> createState() => _DoctortileState();
-}
-
-class _DoctortileState extends State<Doctortile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: ScreenSize.screenWidth * 0.43,
+      // width: ScreenSize.screenWidth * 0.43,
       margin: const EdgeInsets.only(top: Paddings.normal),
       padding: const EdgeInsets.only(
         top: Paddings.minimum,
@@ -37,9 +44,7 @@ class _DoctortileState extends State<Doctortile> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           InkWell(
-            onTap:() {
-              
-            },
+            onTap: onTap,
             child: Container(
               height:
                   ScreenSize.screenHeight * ContainerSizes.doctorImgHeightWidth,
@@ -58,9 +63,11 @@ class _DoctortileState extends State<Doctortile> {
           const SizedBox(
             height: Paddings.minimum,
           ),
-          const Text(
-            'Dr. Jenny Wilson',
-            style: TextStyle(
+          Text(
+            name,
+            maxLines: 1,
+            overflow: TextOverflow.clip,
+            style: const TextStyle(
               fontSize: FontSizes.headline2,
               fontWeight: FontWeight.w500,
             ),
@@ -68,9 +75,9 @@ class _DoctortileState extends State<Doctortile> {
           const SizedBox(
             height: Paddings.minimum,
           ),
-          const Text(
-            'Specialist Dentist',
-            style: TextStyle(
+          Text(
+            role,
+            style: const TextStyle(
                 fontSize: FontSizes.small,
                 fontWeight: FontWeight.w500,
                 color: ColorName.gray),
@@ -84,18 +91,18 @@ class _DoctortileState extends State<Doctortile> {
               Container(
                   child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Icon(
+                children: [
+                  const Icon(
                     MyIcons.star,
                     color: Colors.amber,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: Paddings.minimum,
                   ),
-                  Text('150'),
+                  Text(totalRating),
                 ],
               )),
-              Icon(MyIcons.heart),
+              const Icon(MyIcons.heart),
             ],
           )
         ],
