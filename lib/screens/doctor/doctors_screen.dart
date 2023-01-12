@@ -30,10 +30,11 @@ class DoctorScreen extends StatelessWidget {
             padding: const EdgeInsets.all(0),
             shrinkWrap: true,
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 200,
-                childAspectRatio: 2 / 3,
-                crossAxisSpacing: Paddings.minimum,
-                mainAxisSpacing: Paddings.minimum),
+              maxCrossAxisExtent: 200,
+              childAspectRatio: 2 / 2.73,
+              crossAxisSpacing: Paddings.minimum,
+              // mainAxisSpacing: Paddings.minimum,
+            ),
             itemCount: DoctorModel.doctors.length,
             itemBuilder: (BuildContext ctx, index) {
               return DoctorTile(

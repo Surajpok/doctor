@@ -42,7 +42,7 @@ class ContainerSizes {
 // appointment
   static const double appointContainerheight = 270;
   static const double imageBoxHeightWidth = 0.09;
-  static const double doctorImgHeightWidth = 0.15;
+  static const double doctorImgHeightWidth = 0.17;
 
 // message tile
   static const double msgTileImgHeightWidth = 0.08;

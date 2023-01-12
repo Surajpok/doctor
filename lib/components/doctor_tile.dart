@@ -19,11 +19,11 @@ class DoctorTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // width: ScreenSize.screenWidth * 0.43,
-      margin: const EdgeInsets.only(top: Paddings.normal),
+      margin: const EdgeInsets.only(top: Paddings.minimum),
       padding: const EdgeInsets.only(
         top: Paddings.minimum,
         right: Paddings.minimum,
-        bottom: Paddings.normal,
+        bottom: Paddings.minimum,
         left: Paddings.minimum,
       ),
       decoration: const BoxDecoration(
@@ -72,9 +72,9 @@ class DoctorTile extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-          const SizedBox(
-            height: Paddings.minimum,
-          ),
+          // const SizedBox(
+          //   height: Paddings.minimum,
+          // ),
           Text(
             role,
             style: const TextStyle(

@@ -33,9 +33,12 @@ class _AppointmentScreenState extends State<AppointmentScreen>
         ],
       ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: Paddings.normal, vertical: Paddings.normal),
+        child: Container(
+          padding: const EdgeInsets.only(
+              top: Paddings.minimum,
+              right: Paddings.normal,
+              // bottom: Paddings.normal,
+              left: Paddings.normal),
           child: Column(
             children: [
               Container(
@@ -70,7 +73,8 @@ class _AppointmentScreenState extends State<AppointmentScreen>
                         ListView.builder(
                           scrollDirection: Axis.vertical,
                           itemCount: AppointmentModel.appointments.length,
-                          padding: EdgeInsets.all(0),
+                          padding:
+                              const EdgeInsets.only(bottom: Paddings.normal),
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),
                           itemBuilder: (BuildContext context, int index) {

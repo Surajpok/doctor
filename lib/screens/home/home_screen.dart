@@ -148,7 +148,7 @@ Widget _buildBody(BuildContext context) {
                       gridDelegate:
                           const SliverGridDelegateWithMaxCrossAxisExtent(
                               maxCrossAxisExtent: 200,
-                              childAspectRatio: 2 / 3,
+                              childAspectRatio: 2 / 2.89,
                               crossAxisSpacing: Paddings.minimum,
                               mainAxisSpacing: Paddings.minimum),
                       itemCount: 2,

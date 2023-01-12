@@ -11,7 +11,6 @@ class _NotificationTileState extends State<NotificationTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenSize.screenHeight * 0.07,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -32,10 +31,15 @@ class _NotificationTileState extends State<NotificationTile> {
                   "Your have appointment with mahbuba islam at 9:00 pm today",
                   style: TextStyle(fontSize: FontSizes.normal),
                 ),
+                SizedBox(
+                  height: Margins.minimum,
+                ),
                 Text(
                   "Just Now",
                   style: TextStyle(
-                      fontSize: FontSizes.normal, color: ColorName.gray),
+                    fontSize: FontSizes.small,
+                    color: ColorName.gray,
+                  ),
                 ),
               ],
             ),
