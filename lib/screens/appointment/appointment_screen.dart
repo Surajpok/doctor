@@ -78,18 +78,31 @@ class _AppointmentScreenState extends State<AppointmentScreen>
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),
                           itemBuilder: (BuildContext context, int index) {
-                            return AppoitmentSection(
-                              date: AppointmentModel.appointments[index].date,
-                              image: AppointmentModel.appointments[index].image,
-                              name: AppointmentModel.appointments[index].name,
-                              fromTime:
-                                  AppointmentModel.appointments[index].fromTime,
-                              toTime:
-                                  AppointmentModel.appointments[index].toTime,
-                              isCancelled: AppointmentModel
-                                  .appointments[index].isCancelled,
-                              role: AppointmentModel.appointments[index].role,
-                            );
+                            return AppointmentModel
+                                        .appointments[index].isCancelled ||
+                                    AppointmentModel
+                                        .appointments[index].isComplete
+                                ? Container()
+                                : AppoitmentSection(
+                                    date: AppointmentModel
+                                        .appointments[index].date,
+                                    image: AppointmentModel
+                                        .appointments[index].image,
+                                    name: AppointmentModel
+                                        .appointments[index].name,
+                                    fromTime: AppointmentModel
+                                        .appointments[index].fromTime,
+                                    toTime: AppointmentModel
+                                        .appointments[index].toTime,
+                                    isCancelled: AppointmentModel
+                                        .appointments[index].isCancelled,
+                                    isCompleted: AppointmentModel
+                                        .appointments[index].isComplete,
+                                    role: AppointmentModel
+                                        .appointments[index].role,
+                                    notes: AppointmentModel
+                                        .appointments[index].notes,
+                                  );
                           },
                         ),
                       ],
@@ -103,20 +116,31 @@ class _AppointmentScreenState extends State<AppointmentScreen>
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),
                           itemBuilder: (BuildContext context, int index) {
-                            return AppoitmentSection(
-                              date: AppointmentModel.appointments[index].date,
-                              image: AppointmentModel.appointments[index].image,
-                              name: AppointmentModel.appointments[index].name,
-                              fromTime:
-                                  AppointmentModel.appointments[index].fromTime,
-                              toTime:
-                                  AppointmentModel.appointments[index].toTime,
-                              isCancelled: AppointmentModel
-                                  .appointments[index].isCancelled,
-                              role: AppointmentModel.appointments[index].role,
-                            );
+                            return AppointmentModel
+                                    .appointments[index].isComplete
+                                ? AppoitmentSection(
+                                    date: AppointmentModel
+                                        .appointments[index].date,
+                                    image: AppointmentModel
+                                        .appointments[index].image,
+                                    name: AppointmentModel
+                                        .appointments[index].name,
+                                    fromTime: AppointmentModel
+                                        .appointments[index].fromTime,
+                                    toTime: AppointmentModel
+                                        .appointments[index].toTime,
+                                    isCancelled: AppointmentModel
+                                        .appointments[index].isCancelled,
+                                    isCompleted: AppointmentModel
+                                        .appointments[index].isComplete,
+                                    role: AppointmentModel
+                                        .appointments[index].role,
+                                    notes: AppointmentModel
+                                        .appointments[index].notes,
+                                  )
+                                : Container();
                           },
-                        )
+                        ),
                       ],
                     ),
                     ListView(
@@ -128,18 +152,29 @@ class _AppointmentScreenState extends State<AppointmentScreen>
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),
                           itemBuilder: (BuildContext context, int index) {
-                            return AppoitmentSection(
-                              date: AppointmentModel.appointments[index].date,
-                              image: AppointmentModel.appointments[index].image,
-                              name: AppointmentModel.appointments[index].name,
-                              fromTime:
-                                  AppointmentModel.appointments[index].fromTime,
-                              toTime:
-                                  AppointmentModel.appointments[index].toTime,
-                              isCancelled: AppointmentModel
-                                  .appointments[index].isCancelled,
-                              role: AppointmentModel.appointments[index].role,
-                            );
+                            return AppointmentModel
+                                    .appointments[index].isCancelled
+                                ? AppoitmentSection(
+                                    date: AppointmentModel
+                                        .appointments[index].date,
+                                    image: AppointmentModel
+                                        .appointments[index].image,
+                                    name: AppointmentModel
+                                        .appointments[index].name,
+                                    fromTime: AppointmentModel
+                                        .appointments[index].fromTime,
+                                    toTime: AppointmentModel
+                                        .appointments[index].toTime,
+                                    isCancelled: AppointmentModel
+                                        .appointments[index].isCancelled,
+                                    isCompleted: AppointmentModel
+                                        .appointments[index].isComplete,
+                                    role: AppointmentModel
+                                        .appointments[index].role,
+                                    notes: AppointmentModel
+                                        .appointments[index].notes,
+                                  )
+                                : Container();
                           },
                         ),
                       ],

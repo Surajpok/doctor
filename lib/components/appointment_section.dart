@@ -7,7 +7,9 @@ class AppoitmentSection extends StatelessWidget {
   final String date;
   final String fromTime;
   final String toTime;
+  final String notes;
   final bool isCancelled;
+  final bool isCompleted;
   const AppoitmentSection({
     Key? key,
     required this.name,
@@ -16,7 +18,9 @@ class AppoitmentSection extends StatelessWidget {
     required this.fromTime,
     required this.toTime,
     required this.role,
+    required this.notes,
     required this.isCancelled,
+    required this.isCompleted,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -50,7 +54,9 @@ class AppoitmentSection extends StatelessWidget {
                       ? _buildCancel(context)
                       : Column(
                           children: [
-                            _buildDate(context),
+                            isCompleted
+                                ? _buildComplete(context)
+                                : _buildDate(context),
                             _buildButtons(context),
                           ],
                         )
@@ -211,6 +217,93 @@ class AppoitmentSection extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildComplete(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: Paddings.normal),
+      child: Container(
+        decoration: const BoxDecoration(
+          color: ColorName.primaryAccent,
+          borderRadius: BorderRadius.all(
+            Radius.circular(RadiusSize.containerRadiusTiny),
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(Paddings.normal),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Icon(
+                    MyIcons.docs,
+                    color: ColorName.primaryColor,
+                  ),
+                  const SizedBox(
+                    width: Margins.minimum,
+                  ),
+                  Text(
+                    '$notes',
+                    style: const TextStyle(
+                      fontSize: FontSizes.normal,
+                      color: ColorName.black,
+                      fontWeight: FontWeight.w500,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  const Icon(
+                    MyIcons.calander,
+                    color: ColorName.primaryColor,
+                  ),
+                  const SizedBox(
+                    width: Margins.minimum,
+                  ),
+                  Text(
+                    date,
+                    style: const TextStyle(
+                      fontSize: FontSizes.normal,
+                      color: ColorName.black,
+                      fontWeight: FontWeight.w500,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Icon(
+                    MyIcons.clock,
+                    color: ColorName.primaryColor,
+                  ),
+                  const SizedBox(
+                    width: Margins.minimum,
+                  ),
+                  Text(
+                    '$fromTime : $toTime',
+                    style: const TextStyle(
+                      fontSize: FontSizes.normal,
+                      color: ColorName.black,
+                      fontWeight: FontWeight.w500,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 

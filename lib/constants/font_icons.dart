@@ -9,6 +9,7 @@ class MyIcons {
   // appointment icon
   static const calander = IconlyLight.calendar;
   static const clock = IconlyLight.time_circle;
+  static const docs = IconlyLight.document;
   static const dots = Icons.more_vert;
   static const close = IconlyLight.close_square;
 

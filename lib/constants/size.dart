@@ -55,7 +55,7 @@ class FontSizes {
 
   static const double headline1 = 34.0;
   static const double headline2 = 18.0;
-  static const double slide = 27.0;
+  static const double slide = 25.0;
 
   static const double normal = 16.0;
   static const double small = 14.0;
