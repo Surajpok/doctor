@@ -99,7 +99,8 @@ Widget _buildBody(BuildContext context) {
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     itemBuilder: (BuildContext context, int index) {
-                      return AppointmentModel.appointments[index].isCancelled
+                      return AppointmentModel.appointments[index].isCancelled ||
+                              AppointmentModel.appointments[index].isComplete
                           ? Container()
                           : AppoitmentSection(
                               date: AppointmentModel.appointments[index].date,
