@@ -225,7 +225,7 @@ class AppoitmentSection extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: Paddings.normal),
       child: Container(
         decoration: const BoxDecoration(
-          color: ColorName.primaryAccent,
+          color: ColorName.terteryAccent,
           borderRadius: BorderRadius.all(
             Radius.circular(RadiusSize.containerRadiusTiny),
           ),

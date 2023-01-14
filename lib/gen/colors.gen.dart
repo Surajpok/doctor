@@ -40,6 +40,9 @@ class ColorName {
   /// Color: #F4F5F5
   static const Color shadowColor = Color(0xFFF4F5F5);
 
+  /// Color: #F4FFF0
+  static const Color terteryAccent = Color(0xFFF4FFF0);
+
   /// Color: #0088FF
   static const Color textButtonColor = Color(0xFF0088FF);
 

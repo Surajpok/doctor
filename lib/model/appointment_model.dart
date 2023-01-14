@@ -75,5 +75,17 @@ class AppointmentModel extends Equatable {
       isCancelled: false,
       isComplete: false,
     ),
+    AppointmentModel(
+      id: 1,
+      name: 'Dr. Kale Prashad',
+      image: Assets.images.doctor.path,
+      role: "Cardiologist",
+      notes: '3',
+      date: 'Sep 29',
+      fromTime: '1:00',
+      toTime: '2:00',
+      isCancelled: false,
+      isComplete: false,
+    ),
   ];
 }
