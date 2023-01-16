@@ -38,6 +38,10 @@ class MyIcons {
   static const privacy = IconlyLight.bookmark;
   static const logout = IconlyLight.logout;
 
+// doctor page icon
+  static const call = IconlyBold.call;
+  static const chatbold = IconlyBold.chat;
+
   static const remove = Icons.remove;
   static const add = Icons.add;
   static const star = Icons.star;

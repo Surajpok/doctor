@@ -48,6 +48,9 @@ class ContainerSizes {
   static const double msgTileImgHeightWidth = 0.08;
   static const double msgTileHeight = 0.1;
   static const double msgWidth = 0.65;
+
+  //
+  static const double profileHeight = 0.45;
 }
 
 class FontSizes {

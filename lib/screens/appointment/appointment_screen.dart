@@ -17,7 +17,7 @@ class _AppointmentScreenState extends State<AppointmentScreen>
       appBar: MainAppBar.defaultAppBar(
         context,
         title: 'Appointments',
-        leading: false,
+        leading: true,
         height: 55,
         color: ColorName.secondaryAccent,
         actions: [

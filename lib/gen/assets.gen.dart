@@ -43,6 +43,10 @@ class $AssetsImagesGen {
   AssetGenImage get background =>
       const AssetGenImage('assets/images/background.png');
 
+  /// File path: assets/images/bgprofile.png
+  AssetGenImage get bgprofile =>
+      const AssetGenImage('assets/images/bgprofile.png');
+
   /// File path: assets/images/doctor.png
   AssetGenImage get doctor => const AssetGenImage('assets/images/doctor.png');
 
@@ -53,7 +57,8 @@ class $AssetsImagesGen {
   AssetGenImage get nurse => const AssetGenImage('assets/images/nurse.jpeg');
 
   /// List of all assets
-  List<AssetGenImage> get values => [background, doctor, model, nurse];
+  List<AssetGenImage> get values =>
+      [background, bgprofile, doctor, model, nurse];
 }
 
 class $AssetsLottieGen {

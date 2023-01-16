@@ -1,3 +1,4 @@
+import 'package:doctor/components/doctor_details.dart';
 import 'package:doctor/screens/appointment/appointment_screen.dart';
 import 'package:doctor/screens/chat/chat_details.dart';
 import 'package:doctor/screens/doctor/doctors_screen.dart';
@@ -19,7 +20,7 @@ class Routes {
         return MaterialPageRoute(
           builder: (context) => const IntroScreen(),
         );
-      case '/bottom_nav':
+      case '/bottom-nav':
         return MaterialPageRoute(
           builder: (context) => const BottomNav(),
         );
@@ -42,6 +43,10 @@ class Routes {
       case '/doctors':
         return MaterialPageRoute(
           builder: (context) => const DoctorScreen(),
+        );
+      case '/doctor-details':
+        return MaterialPageRoute(
+          builder: (context) => const DoctorDetails(),
         );
     }
     return null;

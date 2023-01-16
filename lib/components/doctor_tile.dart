@@ -89,19 +89,20 @@ class DoctorTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                  child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Icon(
-                    MyIcons.star,
-                    color: Colors.amber,
-                  ),
-                  const SizedBox(
-                    height: Paddings.minimum,
-                  ),
-                  Text(totalRating),
-                ],
-              )),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Icon(
+                      MyIcons.star,
+                      color: Colors.amber,
+                    ),
+                    const SizedBox(
+                      height: Paddings.minimum,
+                    ),
+                    Text(totalRating),
+                  ],
+                ),
+              ),
               const Icon(MyIcons.heart),
             ],
           )

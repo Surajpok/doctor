@@ -42,7 +42,9 @@ class DoctorScreen extends StatelessWidget {
                 image: DoctorModel.doctors[index].image,
                 role: DoctorModel.doctors[index].role,
                 totalRating: DoctorModel.doctors[index].totalRating,
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/doctor-details');
+                },
               );
             }),
       ),

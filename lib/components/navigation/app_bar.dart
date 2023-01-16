@@ -20,7 +20,7 @@ abstract class MainAppBar {
                 size: IconSizes.smallIcon,
               ),
             )
-          : null,
+          : Container(),
       title: Text(
         title,
         overflow: TextOverflow.clip,
@@ -35,6 +35,7 @@ abstract class MainAppBar {
           : false || actions == null
               ? true
               : false,
+      leadingWidth: leading ? null : 0,
       actions: actions,
     );
   }

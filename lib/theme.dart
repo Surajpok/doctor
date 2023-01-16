@@ -2,6 +2,7 @@ import 'package:doctor/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 
 ThemeData appTheme() => ThemeData(
+      primaryColor: ColorName.primaryColor,
       scaffoldBackgroundColor: ColorName.backgroundColor,
       fontFamily: 'Montserrat',
       appBarTheme: const AppBarTheme(
