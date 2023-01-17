@@ -1,6 +1,6 @@
 class Margins {
   Margins._();
-
+  static const double small = 5.0;
   static const double minimum = 8.0;
   static const double normal = 12.0;
   static const double bottom = 70.0;
@@ -22,7 +22,7 @@ class IconSizes {
   static const double appBarItem = 30.0;
 
   static const double smallIcon = 30.0;
-  static const double bigIcon = 200.0;
+  static const double bigIcon = 0.2;
 }
 
 class ContainerSizes {
@@ -49,8 +49,11 @@ class ContainerSizes {
   static const double msgTileHeight = 0.1;
   static const double msgWidth = 0.65;
 
-  //
-  static const double profileHeight = 0.45;
+  // profile page
+  static const double profileHeight = 0.50;
+
+  // reviews page
+  static const double reviewTileHeight = 0.2;
 }
 
 class FontSizes {
@@ -58,8 +61,10 @@ class FontSizes {
 
   static const double headline1 = 34.0;
   static const double headline2 = 18.0;
+
   static const double slide = 25.0;
 
+  static const double big = 22.0;
   static const double normal = 16.0;
   static const double small = 14.0;
 

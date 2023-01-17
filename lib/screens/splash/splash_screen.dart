@@ -29,13 +29,15 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenSize.init(context);
+
     return Scaffold(
       backgroundColor: ColorName.white,
       body: Center(
         child: Container(
           child: Lottie.asset(
             Assets.lottie.logolottie.path,
-            height: IconSizes.bigIcon,
+            height: ScreenSize.screenHeight * IconSizes.bigIcon,
           ),
         ),
       ),

@@ -41,6 +41,8 @@ class MyIcons {
 // doctor page icon
   static const call = IconlyBold.call;
   static const chatbold = IconlyBold.chat;
+  static const heartbold = IconlyBold.heart;
+  static const crown = IconlyBold.work;
 
   static const remove = Icons.remove;
   static const add = Icons.add;

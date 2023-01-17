@@ -1,4 +1,5 @@
 import 'package:doctor/imports.dart';
+import 'package:doctor/model/review_model.dart';
 import 'package:expandable_text/expandable_text.dart';
 
 class DoctorDetails extends StatelessWidget {
@@ -55,7 +56,7 @@ Widget _buildBody(BuildContext context) {
                     ),
                   ),
                   SizedBox(
-                    width: ScreenSize.screenWidth * 0.70,
+                    width: ScreenSize.screenWidth * 0.75,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -74,7 +75,7 @@ Widget _buildBody(BuildContext context) {
                               "Dr. Pramod Kharel",
                               style: TextStyle(
                                   color: ColorName.white,
-                                  fontSize: FontSizes.headline2,
+                                  fontSize: FontSizes.big,
                                   fontWeight: FontWeight.w600),
                             ),
                             Text(
@@ -92,35 +93,122 @@ Widget _buildBody(BuildContext context) {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Container(
-                              padding: const EdgeInsets.all(Margins.minimum),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(
-                                      RadiusSize.containerRadius),
-                                  color: ColorName.gradientSecond),
-                              child: IconButton(
-                                onPressed: (() => Navigator.pop(context)),
-                                icon: const Icon(
-                                  MyIcons.chatbold,
-                                  size: IconSizes.smallIcon,
-                                  color: ColorName.white,
+                            Column(
+                              children: [
+                                Container(
+                                  padding:
+                                      const EdgeInsets.all(Margins.minimum),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(
+                                          RadiusSize.containerRadius),
+                                      color: ColorName.gradientSecond),
+                                  child: IconButton(
+                                    onPressed: (() => Navigator.pop(context)),
+                                    icon: const Icon(
+                                      MyIcons.heartbold,
+                                      size: IconSizes.smallIcon,
+                                      color: ColorName.white,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                const SizedBox(
+                                  height: Paddings.minimum,
+                                ),
+                                const Text(
+                                  "150+",
+                                  style: TextStyle(
+                                    fontSize: FontSizes.big,
+                                    color: ColorName.white,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                const Text(
+                                  "patients",
+                                  style: TextStyle(
+                                    fontSize: FontSizes.small,
+                                    color: ColorName.white,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                                ),
+                              ],
                             ),
-                            Container(
-                              padding: const EdgeInsets.all(Margins.minimum),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(
-                                      RadiusSize.containerRadius),
-                                  color: ColorName.gradientSecond),
-                              child: IconButton(
-                                onPressed: (() => Navigator.pop(context)),
-                                icon: const Icon(
-                                  MyIcons.call,
-                                  size: IconSizes.smallIcon,
-                                  color: ColorName.white,
+                            Column(
+                              children: [
+                                Container(
+                                  padding:
+                                      const EdgeInsets.all(Margins.minimum),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(
+                                          RadiusSize.containerRadius),
+                                      color: ColorName.gradientSecond),
+                                  child: IconButton(
+                                    onPressed: (() => Navigator.pop(context)),
+                                    icon: const Icon(
+                                      MyIcons.crown,
+                                      size: IconSizes.smallIcon,
+                                      color: ColorName.white,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                const SizedBox(
+                                  height: Paddings.minimum,
+                                ),
+                                const Text(
+                                  "10 Years",
+                                  style: TextStyle(
+                                    fontSize: FontSizes.big,
+                                    color: ColorName.white,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                const Text(
+                                  "experience",
+                                  style: TextStyle(
+                                    fontSize: FontSizes.small,
+                                    color: ColorName.white,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Container(
+                                  padding:
+                                      const EdgeInsets.all(Margins.minimum),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(
+                                          RadiusSize.containerRadius),
+                                      color: ColorName.gradientSecond),
+                                  child: IconButton(
+                                    onPressed: (() => Navigator.pop(context)),
+                                    icon: const Icon(
+                                      MyIcons.star,
+                                      size: 35,
+                                      color: ColorName.white,
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: Paddings.minimum,
+                                ),
+                                const Text(
+                                  "4.9+",
+                                  style: TextStyle(
+                                    fontSize: FontSizes.big,
+                                    color: ColorName.white,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                const Text(
+                                  "ratings",
+                                  style: TextStyle(
+                                    fontSize: FontSizes.small,
+                                    color: ColorName.white,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         )
@@ -142,7 +230,7 @@ Widget _buildBody(BuildContext context) {
         ),
       ),
       Padding(
-        padding: EdgeInsets.only(top: ScreenSize.screenHeight * 0.37),
+        padding: EdgeInsets.only(top: ScreenSize.screenHeight * 0.42),
         child: Container(
           padding: const EdgeInsets.only(
             top: Paddings.content,
@@ -152,13 +240,18 @@ Widget _buildBody(BuildContext context) {
           ),
           width: ScreenSize.screenWidth,
           decoration: const BoxDecoration(
-            color: ColorName.backgroundColor,
+            color: ColorName.white,
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(RadiusSize.containerRadiusSmall),
-              topRight: Radius.circular(RadiusSize.containerRadiusSmall),
+              topLeft: Radius.circular(RadiusSize.containerRadius),
+              topRight: Radius.circular(RadiusSize.containerRadius),
             ),
           ),
-          child: _buildDetails(context),
+          child: Column(
+            children: [
+              _buildDetails(context),
+              _buildReview(context),
+            ],
+          ),
         ),
       ),
     ],
@@ -169,8 +262,8 @@ Widget _buildDetails(BuildContext context) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      const Text(
+    children: const [
+      Text(
         "About Doctor",
         overflow: TextOverflow.clip,
         maxLines: 1,
@@ -179,10 +272,10 @@ Widget _buildDetails(BuildContext context) {
           fontSize: FontSizes.headline2,
         ),
       ),
-      const SizedBox(
+      SizedBox(
         height: Paddings.minimum,
       ),
-      const ExpandableText(
+      ExpandableText(
         "Dr. Kawsar Ahmed is the top most Cardiologist specialist in Cumilla Medical Collage Hospital At Cumilla. He achived several awards foe his wonderful confriution in his own field. He is avaliable for privet consulatation. He achived several awards foe his wonderful confriution in his own field. He is avaliable for privet consulatation.",
         style: TextStyle(
           fontSize: FontSizes.normal,
@@ -190,41 +283,65 @@ Widget _buildDetails(BuildContext context) {
           color: ColorName.black,
         ),
         expandText: 'more',
+        linkStyle: TextStyle(fontWeight: FontWeight.w500),
         collapseText: 'less',
         maxLines: 3,
-        linkColor: ColorName.textButtonColor,
+        linkColor: ColorName.gradientSecond,
       ),
-      const SizedBox(
+      SizedBox(
         height: Paddings.normal,
       ),
+    ],
+  );
+}
+
+Widget _buildReview(BuildContext context) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text(
-                  'Reviews',
-                  style: TextStyle(
-                    fontSize: FontSizes.headline2,
-                    fontWeight: FontWeight.w600,
-                  ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const [
+              Text(
+                'Reviews',
+                style: TextStyle(
+                  fontSize: FontSizes.headline2,
+                  fontWeight: FontWeight.w600,
                 ),
-                SizedBox(
-                  width: Paddings.minimum,
+              ),
+              SizedBox(
+                width: Paddings.minimum,
+              ),
+              Icon(
+                MyIcons.star,
+                color: Colors.amber,
+              ),
+              SizedBox(
+                height: Paddings.minimum,
+              ),
+              Text(
+                '4.9+',
+                style: TextStyle(
+                  fontSize: FontSizes.normal,
+                  fontWeight: FontWeight.w600,
                 ),
-                Icon(
-                  MyIcons.star,
-                  color: Colors.amber,
+              ),
+              SizedBox(
+                width: Margins.small,
+              ),
+              Text(
+                '(150)',
+                style: TextStyle(
+                  fontSize: FontSizes.normal,
+                  color: ColorName.gray,
                 ),
-                SizedBox(
-                  height: Paddings.minimum,
-                ),
-                Text('4.9 (150)'),
-              ],
-            ),
+              ),
+            ],
           ),
           InkWell(
             onTap: () {
@@ -240,6 +357,24 @@ Widget _buildDetails(BuildContext context) {
             ),
           ),
         ],
+      ),
+      Container(
+        height: ScreenSize.screenHeight * ContainerSizes.reviewTileHeight,
+        width: ScreenSize.screenWidth,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: ReviewModel.reviews.length,
+          shrinkWrap: true,
+          itemBuilder: (context, index) {
+            return ReviewTile(
+                name: ReviewModel.reviews[index].name,
+                image: ReviewModel.reviews[index].image,
+                date: ReviewModel.reviews[index].date,
+                review: ReviewModel.reviews[index].review,
+                rating: ReviewModel.reviews[index].rating,
+                totalRating: ReviewModel.reviews[index].totalRating);
+          },
+        ),
       ),
     ],
   );

@@ -1,4 +1,3 @@
-import 'package:doctor/components/category_section.dart';
 import 'package:doctor/imports.dart';
 import 'package:doctor/model/appointment_model.dart';
 import 'package:doctor/model/doctor_model.dart';
