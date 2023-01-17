@@ -53,7 +53,7 @@ class ContainerSizes {
   static const double profileHeight = 0.50;
 
   // reviews page
-  static const double reviewTileHeight = 0.2;
+  static const double reviewTileHeight = 0.22;
 }
 
 class FontSizes {

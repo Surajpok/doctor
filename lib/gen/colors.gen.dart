@@ -34,6 +34,9 @@ class ColorName {
   /// Color: #0065FF
   static const Color primaryColor = Color(0xFF0065FF);
 
+  /// Color: #FFFBE9
+  static const Color quartenaryAccent = Color(0xFFFFFBE9);
+
   /// Color: #DFE2E6
   static const Color secondaryAccent = Color(0xFFDFE2E6);
 

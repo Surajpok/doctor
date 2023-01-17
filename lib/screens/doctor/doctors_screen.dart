@@ -14,12 +14,22 @@ class DoctorScreen extends StatelessWidget {
         height: 70,
         color: ColorName.secondaryAccent,
         actions: [
-          const Padding(
-            padding: EdgeInsets.symmetric(
+          Padding(
+            padding: const EdgeInsets.symmetric(
                 vertical: Paddings.minimum, horizontal: Paddings.minimum),
-            child: Icon(
-              MyIcons.search,
-              size: IconSizes.appBarItem,
+            child: InkWell(
+              onTap: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Text('data');
+                  },
+                );
+              },
+              child: Icon(
+                MyIcons.search,
+                size: IconSizes.appBarItem,
+              ),
             ),
           ),
         ],

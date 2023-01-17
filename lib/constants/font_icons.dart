@@ -33,6 +33,7 @@ class MyIcons {
   static const payment = IconlyLight.bag;
   static const password = IconlyLight.lock;
   static const location = IconlyLight.location;
+  static const locationbold = IconlyBold.location;
   static const setting = IconlyLight.setting;
   static const help = IconlyLight.chat;
   static const privacy = IconlyLight.bookmark;

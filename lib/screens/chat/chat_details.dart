@@ -57,7 +57,7 @@ class _ChatDetailsState extends State<ChatDetails> {
                 ),
               ],
             ),
-            _buldFloatBar()
+            _buildFloatBar()
           ],
         ),
       ),
@@ -90,7 +90,7 @@ class _ChatDetailsState extends State<ChatDetails> {
     );
   }
 
-  Widget _buldFloatBar() {
+  Widget _buildFloatBar() {
     return Positioned(
       bottom: 10,
       left: 0,

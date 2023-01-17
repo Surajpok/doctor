@@ -9,18 +9,26 @@ class DoctorDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenSize.init(context);
     return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverPadding(
-            padding: const EdgeInsets.all(0),
-            sliver: SliverList(
-              delegate: SliverChildBuilderDelegate(
-                ((context, index) => _buildBody(context)),
-                childCount: 1,
-              ),
+      body: SafeArea(
+        top: false,
+        child: Stack(
+          children: [
+            CustomScrollView(
+              slivers: [
+                SliverPadding(
+                  padding: const EdgeInsets.all(0),
+                  sliver: SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      ((context, index) => _buildBody(context)),
+                      childCount: 1,
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
+            _buildFloatBar(context),
+          ],
+        ),
       ),
     );
   }
@@ -232,11 +240,8 @@ Widget _buildBody(BuildContext context) {
       Padding(
         padding: EdgeInsets.only(top: ScreenSize.screenHeight * 0.42),
         child: Container(
-          padding: const EdgeInsets.only(
-            top: Paddings.content,
-            bottom: Paddings.content,
-            left: Paddings.normal,
-            right: Paddings.normal,
+          padding: EdgeInsets.only(
+            bottom: ScreenSize.screenHeight * 0.15,
           ),
           width: ScreenSize.screenWidth,
           decoration: const BoxDecoration(
@@ -250,6 +255,7 @@ Widget _buildBody(BuildContext context) {
             children: [
               _buildDetails(context),
               _buildReview(context),
+              _buildLocation(context),
             ],
           ),
         ),
@@ -259,39 +265,46 @@ Widget _buildBody(BuildContext context) {
 }
 
 Widget _buildDetails(BuildContext context) {
-  return Column(
-    mainAxisAlignment: MainAxisAlignment.start,
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: const [
-      Text(
-        "About Doctor",
-        overflow: TextOverflow.clip,
-        maxLines: 1,
-        style: TextStyle(
-          fontWeight: FontWeight.w600,
-          fontSize: FontSizes.headline2,
+  return Padding(
+    padding: const EdgeInsets.only(
+      top: Paddings.content,
+      left: Paddings.normal,
+      right: Paddings.normal,
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const [
+        Text(
+          "About Doctor",
+          overflow: TextOverflow.clip,
+          maxLines: 1,
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: FontSizes.headline2,
+          ),
         ),
-      ),
-      SizedBox(
-        height: Paddings.minimum,
-      ),
-      ExpandableText(
-        "Dr. Kawsar Ahmed is the top most Cardiologist specialist in Cumilla Medical Collage Hospital At Cumilla. He achived several awards foe his wonderful confriution in his own field. He is avaliable for privet consulatation. He achived several awards foe his wonderful confriution in his own field. He is avaliable for privet consulatation.",
-        style: TextStyle(
-          fontSize: FontSizes.normal,
-          fontWeight: FontWeight.normal,
-          color: ColorName.black,
+        SizedBox(
+          height: Paddings.minimum,
         ),
-        expandText: 'more',
-        linkStyle: TextStyle(fontWeight: FontWeight.w500),
-        collapseText: 'less',
-        maxLines: 3,
-        linkColor: ColorName.gradientSecond,
-      ),
-      SizedBox(
-        height: Paddings.normal,
-      ),
-    ],
+        ExpandableText(
+          "Dr. Kawsar Ahmed is the top most Cardiologist specialist in Cumilla Medical Collage Hospital At Cumilla. He achived several awards foe his wonderful confriution in his own field. He is avaliable for privet consulatation. He achived several awards foe his wonderful confriution in his own field. He is avaliable for privet consulatation.",
+          style: TextStyle(
+            fontSize: FontSizes.normal,
+            fontWeight: FontWeight.normal,
+            color: ColorName.black,
+          ),
+          expandText: 'more',
+          linkStyle: TextStyle(fontWeight: FontWeight.w500),
+          collapseText: 'less',
+          maxLines: 3,
+          linkColor: ColorName.gradientSecond,
+        ),
+        SizedBox(
+          height: Paddings.normal,
+        ),
+      ],
+    ),
   );
 }
 
@@ -300,67 +313,80 @@ Widget _buildReview(BuildContext context) {
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                'Reviews',
+      Padding(
+        padding: const EdgeInsets.only(
+          top: Margins.normal,
+          right: Paddings.normal,
+          left: Paddings.normal,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Text(
+                  'Reviews',
+                  style: TextStyle(
+                    fontSize: FontSizes.headline2,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SizedBox(
+                  width: Paddings.minimum,
+                ),
+                Icon(
+                  MyIcons.star,
+                  color: Colors.amber,
+                ),
+                SizedBox(
+                  width: Margins.small,
+                ),
+                Text(
+                  '4.9+',
+                  style: TextStyle(
+                    fontSize: FontSizes.normal,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SizedBox(
+                  width: Margins.small,
+                ),
+                Text(
+                  '(150)',
+                  style: TextStyle(
+                    fontSize: FontSizes.normal,
+                    color: ColorName.gray,
+                  ),
+                ),
+              ],
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '');
+              },
+              child: const Text(
+                'See All',
                 style: TextStyle(
                   fontSize: FontSizes.headline2,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w500,
+                  color: ColorName.primaryColor,
                 ),
-              ),
-              SizedBox(
-                width: Paddings.minimum,
-              ),
-              Icon(
-                MyIcons.star,
-                color: Colors.amber,
-              ),
-              SizedBox(
-                height: Paddings.minimum,
-              ),
-              Text(
-                '4.9+',
-                style: TextStyle(
-                  fontSize: FontSizes.normal,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              SizedBox(
-                width: Margins.small,
-              ),
-              Text(
-                '(150)',
-                style: TextStyle(
-                  fontSize: FontSizes.normal,
-                  color: ColorName.gray,
-                ),
-              ),
-            ],
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, '/appointment');
-            },
-            child: const Text(
-              'See All',
-              style: TextStyle(
-                fontSize: FontSizes.headline2,
-                fontWeight: FontWeight.w600,
-                color: ColorName.primaryColor,
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       Container(
+        padding: const EdgeInsets.only(
+          // top: Margins.normal,
+          right: Paddings.minimum,
+          bottom: Paddings.minimum,
+          left: Paddings.minimum,
+        ),
         height: ScreenSize.screenHeight * ContainerSizes.reviewTileHeight,
-        width: ScreenSize.screenWidth,
+        color: ColorName.white,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: ReviewModel.reviews.length,
@@ -377,5 +403,153 @@ Widget _buildReview(BuildContext context) {
         ),
       ),
     ],
+  );
+}
+
+Widget _buildLocation(BuildContext context) {
+  return Padding(
+    padding: const EdgeInsets.only(
+      right: Paddings.normal,
+      left: Paddings.normal,
+    ),
+    child: Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Location',
+              style: TextStyle(
+                fontSize: FontSizes.headline2,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '');
+              },
+              child: const Text(
+                'See All',
+                style: TextStyle(
+                  fontSize: FontSizes.headline2,
+                  fontWeight: FontWeight.w500,
+                  color: ColorName.primaryColor,
+                ),
+              ),
+            ),
+          ],
+        ),
+        Container(
+          margin: const EdgeInsets.symmetric(vertical: Paddings.normal),
+          child: SizedBox(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const CircleAvatar(
+                  radius: 35,
+                  backgroundColor: ColorName.primaryAccent,
+                  child: Icon(
+                    MyIcons.locationbold,
+                    color: ColorName.primaryColor,
+                    size: IconSizes.smallIcon,
+                  ),
+                ),
+                const SizedBox(
+                  width: Paddings.minimum,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      'Hamro Dental Clinic',
+                      overflow: TextOverflow.clip,
+                      maxLines: 1,
+                      style: TextStyle(
+                        fontSize: FontSizes.normal,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    SizedBox(
+                      height: Margins.minimum,
+                    ),
+                    Text(
+                      'Biratnager - 4, Kanchanbari (Taleshi Tole) ',
+                      overflow: TextOverflow.clip,
+                      maxLines: 1,
+                      style: TextStyle(
+                        fontSize: FontSizes.small,
+                        fontWeight: FontWeight.normal,
+                        color: ColorName.gray,
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+Widget _buildFloatBar(BuildContext context) {
+  return Positioned(
+    bottom: 10,
+    left: 0,
+    right: 0,
+    child: Container(
+      color: ColorName.white,
+      padding: const EdgeInsets.only(
+        top: Paddings.normal,
+        right: Paddings.normal,
+        left: Paddings.normal,
+      ),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const [
+              Text(
+                "Consultation price",
+                style: TextStyle(
+                  fontSize: FontSizes.normal,
+                  color: ColorName.gray,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              Text(
+                "Rs. 500",
+                style: TextStyle(
+                  fontSize: FontSizes.headline2,
+                  color: ColorName.black,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: Paddings.normal,
+          ),
+          MyElevatedButton(
+            height: ScreenSize.screenHeight * 0.07,
+            width: double.infinity,
+            onPressed: () {
+              Navigator.pushNamed(context, '/signup');
+            },
+            borderRadius: BorderRadius.circular(RadiusSize.buttonRadius),
+            child: const Text(
+              'Book an appointment',
+              style: TextStyle(
+                fontSize: FontSizes.normal,
+              ),
+            ),
+          ),
+        ],
+      ),
+    ),
   );
 }

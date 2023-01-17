@@ -23,21 +23,21 @@ class ReviewTile extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          width: ScreenSize.screenWidth * 0.86,
+          width: ScreenSize.screenWidth * 0.9,
           margin: const EdgeInsets.symmetric(
-            horizontal: Paddings.minimum,
+            horizontal: Margins.minimum,
           ),
           padding: const EdgeInsets.all(Paddings.normal),
           decoration: const BoxDecoration(
-            color: Colors.white,
+            color: ColorName.white,
             borderRadius: BorderRadius.all(
               Radius.circular(RadiusSize.containerRadiusSmall),
             ),
             boxShadow: [
               BoxShadow(
                 color: ColorName.shadowColor,
-                spreadRadius: 5,
-                blurRadius: 5,
+                spreadRadius: 10,
+                blurRadius: 10,
               ),
             ],
           ),
@@ -56,8 +56,9 @@ class ReviewTile extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           radius: IconSizes.smallIcon,
-                          foregroundImage:
-                              AssetImage(Assets.images.doctor.path),
+                          foregroundImage: AssetImage(
+                            Assets.images.doctor.path,
+                          ),
                           backgroundColor: ColorName.terteryAccent,
                         ),
                         const SizedBox(
@@ -97,7 +98,7 @@ class ReviewTile extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(Margins.minimum),
                     decoration: const BoxDecoration(
-                      color: ColorName.primaryAccent,
+                      color: ColorName.quartenaryAccent,
                       borderRadius: BorderRadius.all(
                         Radius.circular(RadiusSize.containerRadiusSmall),
                       ),
@@ -125,7 +126,7 @@ class ReviewTile extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: Paddings.normal,
+                height: Paddings.minimum,
               ),
               Text(
                 review,
