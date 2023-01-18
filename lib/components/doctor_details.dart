@@ -287,18 +287,13 @@ Widget _buildDetails(BuildContext context) {
         SizedBox(
           height: Paddings.minimum,
         ),
-        ExpandableText(
+        Text(
           "Dr. Kawsar Ahmed is the top most Cardiologist specialist in Cumilla Medical Collage Hospital At Cumilla. He achived several awards foe his wonderful confriution in his own field. He is avaliable for privet consulatation. He achived several awards foe his wonderful confriution in his own field. He is avaliable for privet consulatation.",
           style: TextStyle(
             fontSize: FontSizes.normal,
             fontWeight: FontWeight.normal,
             color: ColorName.black,
           ),
-          expandText: 'more',
-          linkStyle: TextStyle(fontWeight: FontWeight.w500),
-          collapseText: 'less',
-          maxLines: 3,
-          linkColor: ColorName.gradientSecond,
         ),
         SizedBox(
           height: Paddings.normal,
