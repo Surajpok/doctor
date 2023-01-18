@@ -98,28 +98,24 @@ Widget _buildBody(BuildContext context) {
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (BuildContext context, int index) {
-                      if (AppointmentModel.appointments[index].isCancelled ||
-                          AppointmentModel.appointments[index].isComplete) {
-                        return Container();
-                      } else {
-                        for (int i = 1; i < 2; i++) {
-                          return AppoitmentSection(
-                            date: AppointmentModel.appointments[index].date,
-                            image: AppointmentModel.appointments[index].image,
-                            name: AppointmentModel.appointments[index].name,
-                            fromTime:
-                                AppointmentModel.appointments[index].fromTime,
-                            toTime: AppointmentModel.appointments[index].toTime,
-                            isCancelled: AppointmentModel
-                                .appointments[index].isCancelled,
-                            isCompleted:
-                                AppointmentModel.appointments[index].isComplete,
-                            role: AppointmentModel.appointments[index].role,
-                            notes: AppointmentModel.appointments[index].notes,
-                          );
-                        }
-                      }
-                      return Container();
+                      return AppointmentModel.appointments[index].isLatest ==
+                              true
+                          ? AppoitmentSection(
+                              date: AppointmentModel.appointments[index].date,
+                              image: AppointmentModel.appointments[index].image,
+                              name: AppointmentModel.appointments[index].name,
+                              fromTime:
+                                  AppointmentModel.appointments[index].fromTime,
+                              toTime:
+                                  AppointmentModel.appointments[index].toTime,
+                              isCancelled: AppointmentModel
+                                  .appointments[index].isCancelled,
+                              isCompleted: AppointmentModel
+                                  .appointments[index].isComplete,
+                              role: AppointmentModel.appointments[index].role,
+                              notes: AppointmentModel.appointments[index].notes,
+                            )
+                          : Container();
                     },
                   ),
                   const SizedBox(

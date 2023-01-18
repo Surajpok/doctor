@@ -24,6 +24,8 @@ dependencies:
   iconly: ^1.0.1
   expandable_text: ^2.3.0
   pinput: ^2.2.0
+  intl: ^0.17.0
+  date_picker_timeline: ^1.2.3
 
 dev_dependencies:
   flutter_test:

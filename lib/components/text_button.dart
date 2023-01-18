@@ -4,6 +4,7 @@ class MyTextButton extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;
   final double? width;
   final double? height;
+  final Color? color;
   final VoidCallback? onPressed;
   final Widget child;
 
@@ -14,6 +15,7 @@ class MyTextButton extends StatelessWidget {
     this.borderRadius,
     this.width,
     this.height,
+    this.color,
   }) : super(key: key);
 
   @override

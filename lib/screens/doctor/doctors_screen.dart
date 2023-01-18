@@ -162,28 +162,29 @@ class DoctorScreen extends StatelessWidget {
   Widget _buildBody(BuildContext context) {
     return Container(
       child: GridView.builder(
-          padding: const EdgeInsets.all(0),
-          scrollDirection: Axis.vertical,
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 200,
-            childAspectRatio: 2 / 2.79,
-            crossAxisSpacing: Paddings.minimum,
-            // mainAxisSpacing: Paddings.minimum,
-          ),
-          itemCount: DoctorModel.doctors.length,
-          itemBuilder: (BuildContext ctx, index) {
-            return DoctorTile(
-              name: DoctorModel.doctors[index].name,
-              image: DoctorModel.doctors[index].image,
-              role: DoctorModel.doctors[index].role,
-              totalRating: DoctorModel.doctors[index].totalRating,
-              onTap: () {
-                Navigator.pushNamed(context, '/doctor-details');
-              },
-            );
-          }),
+        padding: const EdgeInsets.all(0),
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 2 / 2.79,
+          crossAxisSpacing: Paddings.minimum,
+          // mainAxisSpacing: Paddings.minimum,
+        ),
+        itemCount: DoctorModel.doctors.length,
+        itemBuilder: (BuildContext ctx, index) {
+          return DoctorTile(
+            name: DoctorModel.doctors[index].name,
+            image: DoctorModel.doctors[index].image,
+            role: DoctorModel.doctors[index].role,
+            totalRating: DoctorModel.doctors[index].totalRating,
+            onTap: () {
+              Navigator.pushNamed(context, '/doctor-details');
+            },
+          );
+        },
+      ),
     );
   }
 }

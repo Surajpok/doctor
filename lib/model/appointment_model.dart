@@ -12,6 +12,7 @@ class AppointmentModel extends Equatable {
   final String toTime;
   final bool isCancelled;
   final bool isComplete;
+  final bool isLatest;
 
   AppointmentModel({
     required this.id,
@@ -24,6 +25,7 @@ class AppointmentModel extends Equatable {
     required this.notes,
     required this.isComplete,
     required this.isCancelled,
+    required this.isLatest,
   });
   @override
   List<Object?> get props => [
@@ -37,6 +39,7 @@ class AppointmentModel extends Equatable {
         toTime,
         isCancelled,
         isComplete,
+        isLatest,
       ];
   static List<AppointmentModel> appointments = [
     AppointmentModel(
@@ -50,6 +53,7 @@ class AppointmentModel extends Equatable {
       toTime: '2:00',
       isCancelled: true,
       isComplete: false,
+      isLatest: false,
     ),
     AppointmentModel(
       id: 1,
@@ -62,6 +66,7 @@ class AppointmentModel extends Equatable {
       toTime: '2:00',
       isCancelled: false,
       isComplete: true,
+      isLatest: false,
     ),
     AppointmentModel(
       id: 1,
@@ -74,6 +79,7 @@ class AppointmentModel extends Equatable {
       toTime: '2:00',
       isCancelled: false,
       isComplete: false,
+      isLatest: true,
     ),
     AppointmentModel(
       id: 1,
@@ -86,6 +92,7 @@ class AppointmentModel extends Equatable {
       toTime: '2:00',
       isCancelled: false,
       isComplete: false,
+      isLatest: false,
     ),
   ];
 }
