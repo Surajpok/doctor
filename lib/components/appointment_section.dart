@@ -27,7 +27,7 @@ class AppoitmentSection extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Container(
-          margin: EdgeInsets.only(top: Paddings.normal),
+          margin: const EdgeInsets.only(top: Paddings.normal),
           decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(

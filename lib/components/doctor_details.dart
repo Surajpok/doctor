@@ -1,6 +1,5 @@
 import 'package:doctor/imports.dart';
 import 'package:doctor/model/review_model.dart';
-import 'package:expandable_text/expandable_text.dart';
 
 class DoctorDetails extends StatelessWidget {
   const DoctorDetails({super.key});
@@ -254,8 +253,8 @@ Widget _buildBody(BuildContext context) {
           child: Column(
             children: [
               _buildDetails(context),
-              _buildReview(context),
               _buildLocation(context),
+              _buildReview(context),
             ],
           ),
         ),
@@ -288,11 +287,10 @@ Widget _buildDetails(BuildContext context) {
           height: Paddings.minimum,
         ),
         Text(
-          "Dr. Kawsar Ahmed is the top most Cardiologist specialist in Cumilla Medical Collage Hospital At Cumilla. He achived several awards foe his wonderful confriution in his own field. He is avaliable for privet consulatation. He achived several awards foe his wonderful confriution in his own field. He is avaliable for privet consulatation.",
+          "Dr. Kawsar Ahmed is the top most Cardiologist specialist in Cumilla Medical Collage Hospital At Cumilla. He achived several awards foe his wonderful confriution in his own field. He is avaliable for privet consulatation. He achived several awards foe his wonderful confriution in his own field.",
           style: TextStyle(
             fontSize: FontSizes.normal,
             fontWeight: FontWeight.normal,
-            color: ColorName.black,
           ),
         ),
         SizedBox(
@@ -412,25 +410,12 @@ Widget _buildLocation(BuildContext context) {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
+          children: const [
+            Text(
               'Location',
               style: TextStyle(
                 fontSize: FontSizes.headline2,
                 fontWeight: FontWeight.w600,
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, '');
-              },
-              child: const Text(
-                'See All',
-                style: TextStyle(
-                  fontSize: FontSizes.headline2,
-                  fontWeight: FontWeight.w500,
-                  color: ColorName.primaryColor,
-                ),
               ),
             ),
           ],
@@ -533,7 +518,7 @@ Widget _buildFloatBar(BuildContext context) {
             height: ScreenSize.screenHeight * 0.07,
             width: double.infinity,
             onPressed: () {
-              Navigator.pushNamed(context, '/signup');
+              Navigator.pushNamed(context, '/book-appointment');
             },
             borderRadius: BorderRadius.circular(RadiusSize.buttonRadius),
             child: const Text(

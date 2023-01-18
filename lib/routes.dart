@@ -1,5 +1,6 @@
 import 'package:doctor/components/doctor_details.dart';
 import 'package:doctor/screens/appointment/appointment_screen.dart';
+import 'package:doctor/screens/appointment/book_appointment.dart';
 import 'package:doctor/screens/chat/chat_details.dart';
 import 'package:doctor/screens/doctor/doctors_screen.dart';
 import 'package:doctor/screens/intro/intro_screen.dart';
@@ -47,6 +48,10 @@ class Routes {
       case '/doctor-details':
         return MaterialPageRoute(
           builder: (context) => const DoctorDetails(),
+        );
+      case '/book-appointment':
+        return MaterialPageRoute(
+          builder: (context) => const BookAppointment(),
         );
     }
     return null;

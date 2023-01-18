@@ -133,7 +133,9 @@ class ReviewTile extends StatelessWidget {
                 overflow: TextOverflow.clip,
                 maxLines: 2,
                 style: const TextStyle(
-                    fontSize: FontSizes.normal, fontWeight: FontWeight.normal),
+                  fontSize: FontSizes.normal,
+                  fontWeight: FontWeight.normal,
+                ),
               ),
             ],
           ),
